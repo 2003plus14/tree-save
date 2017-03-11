@@ -71,6 +71,10 @@ html, body, .google-map {
     transition-duration: 0.4s;
 }
 
+.header .headerBtns .headerBtnOn:hover, .header .headerBtns .headerBtnOff:hover{
+    background: #43A047;
+}
+
 .header .headerBtns .headerBtnOn:focus, .header .headerBtns .headerBtnOff:focus{
     outline: none;
 }
