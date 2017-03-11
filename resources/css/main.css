@@ -41,7 +41,7 @@ html, body, .google-map {
     margin: 0.5em 0 0 1em;
 }
 
-.header .headerBtns .headerBtn {
+.header .headerBtns .headerBtnOff {
     margin: 0 0.3em 0;
     padding: 1em 2em 1em 2em;
     border: none;
@@ -56,7 +56,7 @@ html, body, .google-map {
     transition-duration: 0.4s;
 }
 
-.header .headerBtns .headerBtn1 {
+.header .headerBtns .headerBtnOn {
     margin: 0 0.3em 0;
     padding: 1em 2em 1em 2em;
     border: none;
@@ -71,7 +71,7 @@ html, body, .google-map {
     transition-duration: 0.4s;
 }
 
-.header .headerBtns .headerBtn:focus {
+.header .headerBtns .headerBtnOn:focus, .header .headerBtns .headerBtnOff:focus{
     outline: none;
 }
 
