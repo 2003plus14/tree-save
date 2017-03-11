@@ -1,9 +1,4 @@
-* {
-    color: #E5E9F0;
-    font-family: 'Roboto', sans-serif;
-}
 /* Style our background */
-
 html, body {
     background: #2E3440;
     margin: 0;
@@ -28,12 +23,8 @@ html, body, .google-map {
 }
 
 .header, .header * {
+    box-sizing: border-box;
     float: left;
-}
-
-.header h4 {
-    color: #D8DEE9;
-    margin: 0.3em 0.5em 0.5em 0.5em;
 }
 
 .header .headerBox {
@@ -64,6 +55,7 @@ html, body, .google-map {
     -o-webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
+
 .header .headerBtns .headerBtn1 {
     margin: 0 0.3em 0;
     padding: 1em 2em 1em 2em;
@@ -79,17 +71,10 @@ html, body, .google-map {
     transition-duration: 0.4s;
 }
 
-    .header .headerBtns .headerBtn:focus {
-        -webkit-box-shadow: 0 0 12px #D8DEE9;
-        -moz-box-shadow: 0 0 12px #D8DEE9;
-        box-shadow: 0 0 12px #D8DEE9;
-    }
-
-/* Input Boxes */
-
-* {
-    box-sizing: border-box;
+.header .headerBtns .headerBtn:focus {
+    outline: none;
 }
+
 /* form starting stylings ------------------------------- */
 
 .group {
