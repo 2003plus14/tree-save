@@ -1,27 +1,28 @@
-/* style our background */
+/* style our page and background */
 
 html, body {
     background: #2E3440;
     margin: 0;
-    padding: 0;
-    border: 0;
+    height: 100%;
 }
 
 
 /* set the default size of our google map */
 
-html, body, .google-map {
+.google-map {
+    z-index: 0;
+    top: 68.4px;
     width: 100%;
-    height: 96.1%;
+    height: 93%;
 }
-
 
 /* default styling for our header */
 
 .header {
-    padding: 0.5em 0;
+    z-index: 100;
+    position: absolute;
+    padding: 0 0 0.5em 0;
     background: #4CAF50;
-    height: 80px;
     width: 100%;
     overflow: auto;
     border: 0;
@@ -42,7 +43,7 @@ html, body, .google-map {
 
 .header .headerBtns {
     float: right;
-    height: 52.5px;
+    height: 50px;
     padding: 0 1em 0;
     border-left: #D8DEE9 solid 2px;
     margin: 0.5em 0 0 1em;
@@ -65,6 +66,7 @@ html, body, .google-map {
 
 .header .headerBtns .headerBtnOn {
     margin: 0 0.3em 0;
+    /*padding: 1.25em 2.25em 1.25em 2.25em;*/
     padding: 1em 2em 1em 2em;
     border: none;
     background: #388E3C;
@@ -89,7 +91,7 @@ html, body, .google-map {
 
 /* input boxes styling */
 
-.group {
+.header_input_group {
     width: 250px;
     margin: 1.155em 1em 0;
     position: relative;
@@ -99,7 +101,7 @@ html, body, .google-map {
 
 /* input boxes */
 
-input {
+.header_input_box {
     background: transparent;
     font-size: 16px;
     padding: 10px 10px 10px 5px;
@@ -111,9 +113,9 @@ input {
 }
 
 
-/* Label */
+/* label default state */
 
-label {
+.header .header_input_label {
     color: #D8DEE9;
     font-size: 18px;
     font-weight: normal;
@@ -128,24 +130,31 @@ label {
 }
 
 
-/* active state */
+/* label active state */
 
-input:focus~label, input:valid~label {
+.header_input_box:focus~.header_input_label, .header_input_box:valid~.header_input_label {
     top: -20px;
     font-size: 14px;
-    color: #D8DEE9;
+    color: #A5D6A7;
 }
 
 
-/* bars along the bottom */
+/* input box text styling */
 
-.bar {
+.header .header_input_box {
+    color: #E8F5E9;
+}
+
+
+/* style the bars along the bottom */
+
+.header_input_bar {
     position: relative;
     display: block;
     width: 250px;
 }
 
-.bar:before, .bar:after {
+.header_input_bar:before, .header_input_bar:after {
     content: '';
     height: 2px;
     width: 0;
@@ -158,22 +167,22 @@ input:focus~label, input:valid~label {
     -webkit-transition: 0.2s ease all;
 }
 
-.bar:before {
+.header_input_bar:before {
     left: 50%;
 }
 
-.bar:after {
+.header_input_bar:after {
     right: 50%;
 }
 
 
 /* active state */
 
-input:focus~.bar:before, input:focus~.bar:after {
+.header_input_box:focus~.header_input_bar:before, input:focus~.header_input_bar:after {
     width: 50%;
 }
 
-input:focus~.highlight {
+.header_input_box:focus~.highlight {
     -webkit-animation: inputHighlighter 0.3s ease;
     -moz-animation: inputHighlighter 0.3s ease;
     animation: inputHighlighter 0.3s ease;
@@ -181,13 +190,6 @@ input:focus~.highlight {
 
 
 /* Scaling for the Mobile view */
-
-@media only screen and (max-width: 1150px) {
-    html, body, .google-map {
-        width: 100%;
-        height: 93.4%;
-    }
-}
 
 @media only screen and (max-width: 480px) {
     html, body, .google-map {

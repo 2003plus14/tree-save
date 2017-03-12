@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Title of the webapp -->
+    <!-- title of the webapp -->
     <title>~ treesave ~</title>
-    <!-- Page information -->
+    <!-- page information -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <!-- Import our css file -->
+    <!-- import our css file -->
     <link rel='stylesheet' type='text/css' href='resources/css/main.css'>
-    <!-- Import our js file -->
+    <!-- import our js file -->
     <script type='text/javascript' src='resources/js/main.js'></script>
     <!-- import the font awesome (icon) pack -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,18 +18,17 @@
 <body>
     <!-- navbar -->
     <div class="header" id='header'>
-            <div class="group">
-                <input type="text" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Start</label>
-            </div>
-            <div class="group">
-                <input type="text" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label>Destination</label>
-            </div>
+        <!-- our input boxes  -->
+        <div class="header_input_group">
+            <input class="header_input_box" type="text" required>
+            <span class="header_input_bar"></span>
+            <label class="header_input_label">Start</label>
+        </div>
+        <div class="header_input_group">
+            <input class="header_input_box" type="text" required>
+            <span class="header_input_bar"></span>
+            <label class="header_input_label">Destination</label>
+        </div>
         <ul class="headerBtns" id="headerBtns">
             <button class="headerBtnOff" id="headerBtnWalk" onclick="button_press_event(this.id)"><i class="fa fa-male fa-2x" aria-hidden="true"></i></button>
             <button class="headerBtnOff" id="headerBtnBike" onclick="button_press_event(this.id)"><i class="fa fa-bicycle fa-2x" aria-hidden="true"></i></button>
