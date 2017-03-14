@@ -22,7 +22,7 @@ html, body {
     z-index: 100;
     position: absolute;
     padding: 0 0 0.5em 0;
-    background: #4CAF50;
+    background: #000000;
     width: 100%;
     overflow: auto;
     border: 0;
