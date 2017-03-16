@@ -20,8 +20,16 @@
     <div class='welcome_box'>
         <h2 class='welcome_header_text'>tree save</h2>
         <div class='welcome_inputs_container'>
-            <input class='input_box' type='text' placeholder='start'></input>
-            <input class='input_box' type='text' placeholder='destination'></input>
+            <div class="welcome_box_input_group">
+                <input class="welcome_box_input_box" type="text" required>
+                <span class="welcome_box_input_bar"></span>
+                <label class="welcome_box_input_label">Start</label>
+            </div>
+            <div class="welcome_box_input_group">
+                <input class="welcome_box_input_box" type="text" required>
+                <span class="welcome_box_input_bar"></span>
+                <label class="welcome_box_input_label">Destination</label>
+            </div>
         </div>
         <button onclick="slide_to_map()" id='welcome_map_button' class='welcome_map_button'><i class="fa fa-map" aria-hidden="true"></i></button>
     </div>

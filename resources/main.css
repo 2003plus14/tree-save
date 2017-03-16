@@ -2,44 +2,142 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 body {
     background: url('img/bike.jpg') no-repeat left top;
     background-size: auto;
     overflow: hidden;
     text-align: center;
-    display: table-cell;
     vertical-align: middle;
 }
-.welcome_logo{
-    border: solid white 3px;
+
+.welcome_logo {
+    border: solid #FAFAFA 3px;
     padding: 0.5em;
     border-radius: 50%;
     width: 53%;
-    margin: 10% 10% 0 10%;
-}
-.welcome_box{
-    width: 94%;
-    height: 60%;
-    margin: 3% 3% 10% 3%;
-    background: rgba(0,0,0,0.85);
+    margin: 3em 3em 0 3em;
+    background: rgba(0, 0, 0, 0.85);
 }
 
-.welcome_box .welcome_header_text{
-    color: white;
+.welcome_box {
+    width: 91%;
+    height: 60%;
+    margin: 1em 1em 3em 1em;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.welcome_box .welcome_header_text {
+    color: #FAFAFA;
     font-family: sans-serif;
     text-align: center;
-    margin: 8% 7% 0 7%;
+    padding: 1em 0;
 }
+
 .welcome_box .welcome_inputs_container {
     text-align: center;
-    margin: 5% 0 5% 0;
+    margin: 0 0 2em 0;
 }
 
 .welcome_box .welcome_map_button {
-    background: white;
+    background: #FAFAFA;
     border: none;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 0 0 5% 0;
+    margin: 1em 0 2em 0;
+}
+
+.welcome_box .welcome_map_button:hover {
+    background: #EEEEEE;
+}
+
+
+/* input boxes styling */
+
+.welcome_box_input_group {
+    margin: 0 1em 0 2em;
+    position: relative;
+}
+
+.welcome_box_input_group:last-child {
+    margin: 1.3em 1em 0 2em;
+    position: relative;
+}
+
+.welcome_box_input_box {
+    background: transparent;
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 87%;
+    border: none;
+    border-bottom: 1px solid #E8F5E9;
+    outline: none;
+}
+
+.welcome_box .welcome_box_input_label {
+    color: #D8DEE9;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.welcome_box_input_box:focus~.welcome_box_input_label, .welcome_box_input_box:valid~.welcome_box_input_label {
+    top: -20px;
+    font-size: 14px;
+    color: #D8DEE9;
+}
+
+.welcome_box .welcome_box_input_box {
+    color: #E8F5E9;
+}
+
+
+/* style the bars along the bottom */
+
+.welcome_box_input_bar {
+    position: relative;
+    display: block;
+}
+
+.welcome_box_input_bar:before, .welcome_box_input_bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #D8DEE9;
+    transition: 0.2s ease all;
+    -o-transition: 02s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.welcome_box_input_bar:before {
+    left: 42%;
+}
+
+.welcome_box_input_bar:after {
+    right: 50%;
+}
+
+
+/* active state */
+
+.welcome_box_input_box:focus~.welcome_box_input_bar:before, input:focus~.welcome_box_input_bar:after {
+    width: 50%;
+}
+
+.welcome_box_input_box:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
 }
