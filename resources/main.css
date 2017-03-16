@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url('img/bike.jpg') no-repeat left top;
+    background-size: auto;
+    overflow: hidden;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+.welcome_logo{
+    border: solid white 3px;
+    padding: 0.5em;
+    border-radius: 50%;
+    width: 53%;
+    margin: 10% 10% 0 10%;
+}
+.welcome_box{
+    width: 94%;
+    height: 60%;
+    margin: 3% 3% 10% 3%;
+    background: rgba(0,0,0,0.85);
+}
+
+.welcome_box .welcome_header_text{
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 8% 7% 0 7%;
+}
+.welcome_box .welcome_inputs_container {
+    text-align: center;
+    margin: 5% 0 5% 0;
+}
+
+.welcome_box .welcome_map_button {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 0 5% 0;
+}

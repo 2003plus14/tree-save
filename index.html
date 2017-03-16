@@ -8,42 +8,24 @@
     <!-- page information -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <!-- import our css file -->
-    <link rel='stylesheet' type='text/css' href='resources/css/main.css'>
+    <link rel='stylesheet' type='text/css' href='resources/main.css'>
     <!-- import our js file -->
-    <script type='text/javascript' src='resources/js/main.js'></script>
+    <script type='text/javascript' src='resources/main.js'></script>
     <!-- import the font awesome (icon) pack -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <!-- navbar -->
-    <div class="header" id='header'>
-        <!-- our input boxes  -->
-        <div class="header_input_group">
-            <input class="header_input_box" type="text" required>
-            <span class="header_input_bar"></span>
-            <label class="header_input_label">Start</label>
+    <img class='welcome_logo' src="resources/img/tree.png"/>
+    <div class='welcome_box'>
+        <h2 class='welcome_header_text'>tree save</h2>
+        <div class='welcome_inputs_container'>
+            <input class='input_box' type='text' placeholder='start'></input>
+            <input class='input_box' type='text' placeholder='destination'></input>
         </div>
-        <div class="header_input_group">
-            <input class="header_input_box" type="text" required>
-            <span class="header_input_bar"></span>
-            <label class="header_input_label">Destination</label>
-        </div>
-        <ul class="headerBtns" id="headerBtns">
-            <button class="headerBtnOff" id="headerBtnWalk" onclick="button_press_event(this.id)"><i class="fa fa-male fa-2x" aria-hidden="true"></i></button>
-            <button class="headerBtnOff" id="headerBtnBike" onclick="button_press_event(this.id)"><i class="fa fa-bicycle fa-2x" aria-hidden="true"></i></button>
-            <button class="headerBtnOff" id="headerBtnMotorbike" onclick="button_press_event(this.id)"><i class="fa fa-motorcycle fa-2x" aria-hidden="true"></i></button>
-            <button class="headerBtnOff" id="headerBtnCar" onclick="button_press_event(this.id)"><i class="fa fa-car fa-2x" aria-hidden="true"></i></button>
-            <button class="headerBtnOff" id="headerBtnBus" onclick="button_press_event(this.id)"><i class="fa fa-bus fa-2x" aria-hidden="true"></i></button>
-            <button class="headerBtnOff" id="headerBtnPlane" onclick="button_press_event(this.id)"><i class="fa fa-plane fa-2x" aria-hidden="true"></i></button>
-            <button class="headerBtnOff" id="headerBtnTrain" onclick="button_press_event(this.id)"><i class="fa fa-train fa-2x" aria-hidden="true"></i></button>
-        </ul>
+        <button onclick="slide_to_map()" id='welcome_map_button' class='welcome_map_button'><i class="fa fa-map" aria-hidden="true"></i></button>
     </div>
 
-    <!-- Container for our google map -->
-    <div class='google-map' id='google-map'>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&callback=build_map"></script>
-    </div>
 </body>
 
 </html>
