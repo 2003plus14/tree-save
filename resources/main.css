@@ -16,14 +16,14 @@ body {
     padding: 0.5em;
     border-radius: 50%;
     width: 53%;
-    margin: 3em 3em 0 3em;
+    margin: auto;
     background: rgba(0, 0, 0, 0.85);
 }
 
 .welcome_box {
     width: 91%;
     height: 60%;
-    margin: 1em 1em 3em 1em;
+    margin: auto;
     background: rgba(0, 0, 0, 0.85);
 }
 
@@ -56,12 +56,13 @@ body {
 /* input boxes styling */
 
 .welcome_box_input_group {
-    margin: 0 1em 0 2em;
+    width: 70%;
+    margin: auto;
     position: relative;
 }
 
 .welcome_box_input_group:last-child {
-    margin: 1.3em 1em 0 2em;
+    margin: 1.5em auto 0 auto;
     position: relative;
 }
 
@@ -100,9 +101,6 @@ body {
     color: #E8F5E9;
 }
 
-
-/* style the bars along the bottom */
-
 .welcome_box_input_bar {
     position: relative;
     display: block;
@@ -129,10 +127,8 @@ body {
     right: 50%;
 }
 
-
-/* active state */
-
-.welcome_box_input_box:focus~.welcome_box_input_bar:before, input:focus~.welcome_box_input_bar:after {
+.welcome_box_input_box:focus~.welcome_box_input_bar:before,
+    input:focus~.welcome_box_input_bar:after {
     width: 50%;
 }
 
@@ -140,4 +136,19 @@ body {
     -webkit-animation: inputHighlighter 0.3s ease;
     -moz-animation: inputHighlighter 0.3s ease;
     animation: inputHighlighter 0.3s ease;
+}
+
+@media only screen and (min-width: 500px) {
+    body {
+        background-size: 100% auto;
+    }
+    .welcome_logo {
+        margin: 10% auto 0 auto;
+        width: 12%;
+    }
+    .welcome_box {
+        margin: auto;
+        width: 50%;
+        border-radius: 3px;
+    }
 }
