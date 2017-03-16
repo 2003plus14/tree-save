@@ -191,7 +191,7 @@ body {
 }
 
 /* open sidebar button */
-.resultsOpenSidebar{
+.openbtn{
   background-color: #4CAF50;
   border: none;
   color: white;
