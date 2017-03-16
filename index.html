@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body class='main'>
     <img class='welcome_logo' src="resources/img/tree.png"/>
     <div class='welcome_box'>
         <h2 class='welcome_header_text'>tree save</h2>
@@ -31,7 +31,16 @@
                 <label class="welcome_box_input_label">Destination</label>
             </div>
         </div>
-        <button onclick="slide_to_map()" id='welcome_map_button' class='welcome_map_button'><i class="fa fa-map" aria-hidden="true"></i></button>
+        <button class='welcome_toggle_map_button'>
+            <i class="fa fa-map" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div class='google_map_holder google_map_hidden'>
+        <!-- Container for our google map -->
+        <div class='google_map' id='google_map'>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&callback=build_map"></script>
+        </div>
     </div>
 
 </body>
