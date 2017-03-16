@@ -39,7 +39,8 @@ html, body {
     margin: 0 0 2em 0;
 }
 
-.welcome_box .welcome_toggle_map_button {
+.welcome_box .welcome_toggle_map_button,
+.welcome_box .welcome_box_submit {
     background: #FAFAFA;
     border: none;
     border-radius: 50%;
@@ -48,10 +49,15 @@ html, body {
     margin: 1em 0 2em 0;
 }
 
-.welcome_box .welcome_toggle_map_button:hover {
-    background: #EEEEEE;
+.welcome_box .welcome_toggle_map_button:hover,
+.welcome_box .welcome_box_submit:hover {
+    background: #9E9E9E;
 }
 
+.welcome_box .welcome_toggle_map_button:active,
+.welcome_box .welcome_box_submit:active {
+    outline: none;
+}
 
 /* input boxes styling */
 
