@@ -189,3 +189,15 @@ body {
   .sideBar{padding-top: 15px}
   .sideBar a{font-size: 18px}
 }
+
+/* open sidebar button */
+.resultsOpenSidebar{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text_align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
