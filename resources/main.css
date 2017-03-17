@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main {
@@ -29,14 +30,13 @@ html, body {
 
 .welcome_box .welcome_header_text {
     color: #FAFAFA;
-    font-family: sans-serif;
     text-align: center;
     padding: 1em 0;
 }
 
 .welcome_box .welcome_inputs_container {
     text-align: center;
-    margin: 0 0 2em 0;
+    margin: 0 0 0 0;
 }
 
 .welcome_box .welcome_toggle_map_button,
@@ -46,7 +46,7 @@ html, body {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 1em 0 2em 0;
+    margin: 1em auto;
 }
 
 .welcome_box .welcome_toggle_map_button:hover,
@@ -67,9 +67,8 @@ html, body {
     position: relative;
 }
 
-.welcome_box_input_group:last-child {
+.welcome_box_input_group:first-of-type + .welcome_box_input_group{
     margin: 1.5em auto 0 auto;
-    position: relative;
 }
 
 .welcome_box_input_box {
@@ -248,7 +247,12 @@ html, body {
 }
 
 /* open sidebar button */
+
 .openbtn{
+  position: absolute;
+  top: 0;
+  left: 5px;
+  /*
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -257,12 +261,23 @@ html, body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  */
 }
 
-.mainResults {
-  background: url('img/resultsBGgreen.jpg') no-repeat left top;
+
+.resultsMain {
+  background: url('img/resultsBGgreen.png') no-repeat left top;
   background-size: auto;
   overflow: hidden;
   text-align: center;
   vertical-align: middle;
+}
+
+.resultsInfo{
+  position: absolute;
+  right: 0px;
+  width: 150px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  background-color: #818181;
 }
