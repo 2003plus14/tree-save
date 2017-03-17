@@ -193,7 +193,7 @@ html, body {
 
 .transport_buttons{
   position: absolute;
-  top: 50%;
+  bottom: 1%;
   left: 40%;
 }
 
@@ -301,8 +301,8 @@ html, body {
 
 
 .resultsMain {
-  background: url('img/resultsBGgreen.png') no-repeat left top;
-  background-size: auto;
+  background: url('img/backgroundGood.png') no-repeat left top;
+  background-size: 100%;
   overflow: hidden;
   text-align: center;
   vertical-align: middle;
