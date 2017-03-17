@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main {
@@ -29,14 +30,13 @@ html, body {
 
 .welcome_box .welcome_header_text {
     color: #FAFAFA;
-    font-family: sans-serif;
     text-align: center;
     padding: 1em 0;
 }
 
 .welcome_box .welcome_inputs_container {
     text-align: center;
-    margin: 0 0 2em 0;
+    margin: 0 0 0 0;
 }
 
 .welcome_box .welcome_toggle_map_button,
@@ -46,7 +46,7 @@ html, body {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 1em 0 2em 0;
+    margin: 1em auto;
 }
 
 .welcome_box .welcome_toggle_map_button:hover,
@@ -67,9 +67,8 @@ html, body {
     position: relative;
 }
 
-.welcome_box_input_group:last-child {
+.welcome_box_input_group:first-of-type + .welcome_box_input_group{
     margin: 1.5em auto 0 auto;
-    position: relative;
 }
 
 .welcome_box_input_box {
