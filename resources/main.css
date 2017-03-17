@@ -299,6 +299,12 @@ html, body {
   */
 }
 
+.mapViewbtn{
+  position: absolute;
+  top: 5;
+  left: 8%;
+}
+
 
 .resultsMain {
   background: url('img/backgroundGood.png') no-repeat left top;
