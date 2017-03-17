@@ -9,16 +9,16 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <!-- import google fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- import the font awesome (icon) pack -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- import our css file -->
     <link rel='stylesheet' type='text/css' href='resources/main.css'>
     <!-- import our js file -->
     <script type='text/javascript' src='resources/main.js'></script>
-    <!-- import the font awesome (icon) pack -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class='main'>
-    <img class='welcome_logo' src="resources/img/tree.png"/>
+    <img class='welcome_logo' src="resources/img/logo.png"/>
     <div class='welcome_box'>
         <h2 class='welcome_header_text'>tree save</h2>
         <div class='welcome_inputs_container'>
@@ -36,16 +36,10 @@
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
             </button></a>
         </div>
-        <button class='welcome_toggle_map_button'>
+        <a href="map.html">
+            <button class='welcome_toggle_map_button'>
             <i class="fa fa-map" aria-hidden="true"></i>
-        </button>
-    </div>
-
-    <div class='google_map_holder google_map_hidden'>
-        <!-- Container for our google map -->
-        <div class='google_map' id='google_map'>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&callback=build_map"></script>
-        </div>
+        </button></a>
     </div>
 
 </body>
