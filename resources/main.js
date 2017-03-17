@@ -12,6 +12,17 @@ function build_map(){
     var map = new google.maps.Map(document.getElementById("google_map"), map_options);
 }
 
+function changeBackground(id,type){
+    console.log('asd');
+    if (type == 'good'){
+        console.log('sad');
+        document.body.style.backgroundImage = "url('resources/img/backgroundGood.png')";
+    } else {
+        console.log('das');
+        document.body.style.backgroundImage = "url('resources/img/backgroundBad.png')";
+    }
+}
+
 /*------------------------------------------*/
 /* RESULTS PAGE SPECIFIC*/
 
