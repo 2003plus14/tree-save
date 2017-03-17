@@ -176,7 +176,47 @@ html, body {
   padding-top: 60px;
   transition: 0.5s;
 }
-
+/*Transport buttons*/
+.results_plane_button {
+  background: #FAFAFA;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 1em 0 2em 0;
+}
+.results_bike_button{
+  background: #FAFAFA;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 1em 0 2em 0;
+}
+.results_person_button{
+  background: #FAFAFA;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 1em 0 2em 0;
+}
+.results_bus_button{
+  background: #FAFAFA;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 1em 0 2em 0;
+}
+.results_car_button{
+  background: #FAFAFA;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 1em 0 2em 0;
+}
 /* sidebar links */
 .sideBar a{
   padding: 8px 8px 8px 32px;
