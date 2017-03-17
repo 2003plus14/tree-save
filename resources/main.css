@@ -177,10 +177,10 @@ html, body {
 }
 /*Transport buttons*/
 
-.buttons{
+.transport_buttons{
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
 }
 
 .results_plane_button {
@@ -222,6 +222,14 @@ html, body {
   width: 40px;
   height: 40px;
   margin: 1em 0 2em 0;
+}
+/*buttos hover*/
+.results_plane_button:hover,
+.results_bike_button:hover,
+.results_person_button:hover,
+.results_bus_button:hover,
+.results_car_button:hover{
+  background: #9E9E9E;
 }
 /* sidebar links */
 .sideBar a{
