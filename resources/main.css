@@ -10,8 +10,11 @@ html, body {
 }
 
 .main {
-    background: url('img/background.jpg') no-repeat left top;
-    background-size: auto;
+    background: url('img/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
@@ -158,9 +161,6 @@ html, body {
 
 /*style our desktop view*/
 @media only screen and (min-width: 500px) {
-    .main {
-        background-size: 100% auto;
-    }
     .welcome_logo {
         margin: 2% auto 0 auto;
         width: 22%;
