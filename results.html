@@ -15,48 +15,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body class="resultsMain">
+<body class="main results_background">
     <!-- side bar -->
     <div id="resultsBar" class="sideBar">
         <!-- buttons -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </a>
+        <button class="closebtn" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></button>
         <a href="index.html" class="CDbtn">Change Destination</a>
     </div>
-    <button class="openbtn" onclick="openNav()">
-      <i class="fa fa-bars  fa-2x" aria-hidden="true"></i>
-    </button>
 
-    <a href="map.html">
-        <button class="mapViewbtn">
-          <i class="fa fa-map fa-2x" aria-hidden="true"></i>
-        </button>
-    </a>
-
-    <!--<span id="resultsOpenSideBar" onclick="openNav()"> open </span> -->
+    <button class="openbtn" onclick="openNav()"><i class="fa fa-bars  fa-2x" aria-hidden="true"></i></button>
+    <a href="map.html"><button class="mapViewbtn"><i class="fa fa-map fa-2x" aria-hidden="true"></i></button></a>
 
     <!--Buttons-->
     <div class="transport_buttons">
-        <button onclick="changeBackground(this.id, 'bad')" class='results_plane_button'>
-      <i class="fa fa-plane" aria-hidden="true"></i>
-    </button>
-
-        <button onclick="changeBackground(this.id, 'good')" class='results_bike_button'>
-      <i class="fa fa-bicycle" aria-hidden="true"></i>
-    </button>
-
-        <button onclick="changeBackground(this.id, 'good')" class='results_person_button'>
-      <i class="fa fa-male" aria-hidden="true"></i>
-    </button>
-
-        <button onclick="changeBackground(this.id, 'bad')" class='results_bus_button'>
-      <i class="fa fa-bus" aria-hidden="true"></i>
-    </button>
-
-        <button onclick="changeBackground(this.id, 'bad')" class='results_car_button'>
-      <i class="fa fa-car" aria-hidden="true"></i>
-    </button>
+        <button onclick="changeBackground(this.id, 'bad')" class='results_plane_button'><i class="fa fa-plane" aria-hidden="true"></i></button>
+        <button onclick="changeBackground(this.id, 'good')" class='results_bike_button'><i class="fa fa-bicycle" aria-hidden="true"></i></button>
+        <button onclick="changeBackground(this.id, 'good')" class='results_person_button'><i class="fa fa-male" aria-hidden="true"></i></button>
+        <button onclick="changeBackground(this.id, 'bad')" class='results_bus_button'><i class="fa fa-bus" aria-hidden="true"></i></button>
+        <button onclick="changeBackground(this.id, 'bad')" class='results_car_button'><i class="fa fa-car" aria-hidden="true"></i></button>
     </div>
     <div class="resultsInfo">
         <p>You are releasing x emissions</p>
