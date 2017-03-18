@@ -13,12 +13,11 @@ function build_map(){
 }
 
 function changeBackground(id,type){
-    console.log('asd');
     if (type == 'good'){
-        console.log('sad');
         document.body.style.backgroundImage = "url('resources/img/backgroundGood.png')";
+        document.body.style.backgroundColor = "#053201";
     } else {
-        console.log('das');
+        document.body.style.backgroundColor = "#484848";
         document.body.style.backgroundImage = "url('resources/img/backgroundBad.png')";
     }
 }

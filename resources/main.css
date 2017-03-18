@@ -265,10 +265,6 @@ html, body {
   position: absolute;
   top: 0;
   left: 1%;
-  /*
-  font-size: 36px;
-  margin-left: 50px;
-  */
 }
 
 .sideBar .CDbtn{
@@ -277,8 +273,8 @@ html, body {
 
 /* sidebar on small screens */
 @media screen and (max-height: 450px){
-  .sideBar{padding-top: 15px}
-  .sideBar a{font-size: 18px}
+    .sideBar{padding-top: 15px}
+    .sideBar a{font-size: 18px}
 }
 
 /* open sidebar button */
@@ -287,17 +283,7 @@ html, body {
   position: absolute;
   top: 5;
   left: 1%;
-  /*
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text_align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  */
-}
+ }
 
 .mapViewbtn{
   position: absolute;
@@ -306,6 +292,7 @@ html, body {
 }
 
 .resultsMain {
+    background-color: #053201;
   background: url('img/backgroundGood.png') no-repeat left top;
   background-size: 100%;
   overflow: hidden;
