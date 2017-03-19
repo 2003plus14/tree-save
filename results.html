@@ -17,24 +17,34 @@
 
 <body class="main results_background">
     <!-- side bar -->
-    <div id="resultsBar" class="sideBar">
+    <div id="resultsBar" class="results_sidebar">
         <!-- buttons -->
         <button class="closebtn" onclick="closeNav()"><i class="fa fa-times" aria-hidden="true"></i></button>
-        <a href="index.html" class="CDbtn">Change Destination</a>
+        <a href="index.html" class="results_sidebar_links">Change Destination</a>
     </div>
 
-    <button class="openbtn" onclick="openNav()"><i class="fa fa-bars  fa-2x" aria-hidden="true"></i></button>
-    <a href="map.html"><button class="mapViewbtn"><i class="fa fa-map fa-2x" aria-hidden="true"></i></button></a>
+    <button class="results_sidebar_open button_clean" onclick="openNav()"><i class="fa fa-bars  fa-2x" aria-hidden="true"></i></button>
+    <a href="map.html"><button class="results_map button_clean"><i class="fa fa-map fa-2x" aria-hidden="true"></i></button></a>
 
     <!--Buttons-->
-    <div class="transport_buttons">
-        <button onclick="changeBackground(this.id, 'bad')" class='results_plane_button'><i class="fa fa-plane" aria-hidden="true"></i></button>
-        <button onclick="changeBackground(this.id, 'good')" class='results_bike_button'><i class="fa fa-bicycle" aria-hidden="true"></i></button>
-        <button onclick="changeBackground(this.id, 'good')" class='results_person_button'><i class="fa fa-male" aria-hidden="true"></i></button>
-        <button onclick="changeBackground(this.id, 'bad')" class='results_bus_button'><i class="fa fa-bus" aria-hidden="true"></i></button>
-        <button onclick="changeBackground(this.id, 'bad')" class='results_car_button'><i class="fa fa-car" aria-hidden="true"></i></button>
+    <div class="results_buttons_group">
+        <button onclick="changeBackground(this.id, 'bad')" class='button_circle'>
+            <i class="fa fa-plane" aria-hidden="true"></i>
+        </button>
+        <button onclick="changeBackground(this.id, 'good')" class='button_circle'>
+            <i class="fa fa-bicycle" aria-hidden="true"></i>
+        </button>
+        <button onclick="changeBackground(this.id, 'good')" class='button_circle'>
+            <i class="fa fa-male" aria-hidden="true"></i>
+        </button>
+        <button onclick="changeBackground(this.id, 'bad')" class='button_circle'>
+            <i class="fa fa-bus" aria-hidden="true"></i>
+        </button>
+        <button onclick="changeBackground(this.id, 'bad')" class='button_circle'>
+            <i class="fa fa-car" aria-hidden="true"></i>
+        </button>
     </div>
-    <div class="resultsInfo">
+    <div class="results_info_pane">
         <p>You are releasing x emissions</p>
         <p>This amounts to y dead trees!</p>
         <p>You despicable human being</p>

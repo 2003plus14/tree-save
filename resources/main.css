@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -18,6 +19,37 @@ html, body {
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
+}
+
+.button_circle{
+    background: #FAFAFA;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 1em auto;
+}
+
+.button_circle:hover {
+    background: #9E9E9E;
+}
+
+.button_circle:active {
+    outline: none;
+}
+
+.button_clean {
+    background: transparent;
+    color: #FAFAFA;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 1em auto;
+}
+
+.button_clean:hover {
+    color: #9E9E9E;
 }
 
 .welcome_background {
@@ -45,39 +77,6 @@ html, body {
 .welcome_box .welcome_inputs_container {
     text-align: center;
     margin: 0 0 0 0;
-}
-
-.welcome_box .welcome_toggle_map_button,
-.welcome_box .welcome_box_submit {
-    background: #FAFAFA;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin: 1em auto;
-}
-
-.welcome_box .welcome_toggle_map_button:hover,
-.welcome_box .welcome_box_submit:hover {
-    background: #9E9E9E;
-}
-
-.welcome_box .welcome_toggle_map_button:active,
-.welcome_box .welcome_box_submit:active {
-    outline: none;
-}
-
-.slider {
-	overflow-y: hidden;
-	max-height: 500px; /* approximate max height */
-
-	transition-property: all;
-	transition-duration: .5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-
-.slider.closed {
-	max-height: 0;
 }
 
 /* input boxes styling */
@@ -184,8 +183,15 @@ html, body {
     background: url('img/backgroundGood.png') no-repeat left top;
 }
 
+/*Transport buttons group*/
+.results_buttons_group{
+    margin: auto;
+    position: relative;
+    top: 90%;
+}
+
 /* sidebar properties */
-.sideBar{
+.results_sideBar{
   height: 100%;
   width: 0;
   position: fixed;
@@ -197,64 +203,9 @@ html, body {
   padding-top: 60px;
   transition: 0.5s;
 }
-/*Transport buttons*/
 
-.transport_buttons{
-  position: absolute;
-  bottom: 1%;
-  left: 40%;
-}
-
-.results_plane_button {
-  background: #FAFAFA;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 1em 0 2em 0;
-}
-.results_bike_button{
-  background: #FAFAFA;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 1em 0 2em 0;
-}
-.results_person_button{
-  background: #FAFAFA;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 1em 0 2em 0;
-}
-.results_bus_button{
-  background: #FAFAFA;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 1em 0 2em 0;
-}
-.results_car_button{
-  background: #FAFAFA;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 1em 0 2em 0;
-}
-/*buttos hover*/
-.results_plane_button:hover,
-.results_bike_button:hover,
-.results_person_button:hover,
-.results_bus_button:hover,
-.results_car_button:hover{
-  background: #9E9E9E;
-}
 /* sidebar links */
-.sideBar a{
+.results_sidebar .results_sidebar_links{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -263,44 +214,39 @@ html, body {
   transition: 0.3s;
 }
 
-/* sidebar hover property */
-.sideBar a:hover, .offcanvas a:focus{
-  color: #f1f1f1;
-}
-
 /* sidebar close button */
-.sideBar .closebtn{
+.results_sideBar .results_sidebar_links{
   position: absolute;
   top: 0;
   left: 1%;
-}
-
-.sideBar .CDbtn{
   font-size: 16px;
 }
 
 /* sidebar on small screens */
 @media screen and (max-height: 450px){
-    .sideBar{padding-top: 15px}
-    .sideBar a{font-size: 18px}
+    .results_sidebar{
+        padding-top: 15px
+    }
+    .results_sidebar .results_sidebar_links{
+        font-size: 18px
+    }
 }
 
 /* open sidebar button */
-
-.openbtn{
-  position: absolute;
-  top: 5;
-  left: 1%;
+.results_sidebar_open {
+    position: absolute;
+    top: 5;
+    left: 1%;
  }
 
-.mapViewbtn{
-  position: absolute;
-  top: 5;
+.results_map {
+  float: right;
+  top: 5%;
   left: 8%;
 }
 
-
-.resultsInfo{
+/*this will be gone soon, dont mind me*/
+.results_info_pane{
   position: absolute;
   top: 5%;
   right: 0px;
