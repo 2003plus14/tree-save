@@ -10,7 +10,7 @@
 .welcome_box {
     width: 91%;
     margin: auto;
-    padding: 0 0 3% 0;
+    background: black;
     background: rgba(0, 0, 0, 0.85);
 }
 
@@ -51,9 +51,11 @@
     font-size: 16px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 95.6%;
     border: none;
     border-bottom: 1px solid #E8F5E9;
+}
+
+.welcome_box_input_box:focus {
     outline: none;
 }
 
