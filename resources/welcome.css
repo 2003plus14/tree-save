@@ -25,6 +25,7 @@
     margin: 0 0 0 0;
 }
 
+
 /* input boxes styling */
 
 .welcome_box_input_group {
@@ -33,7 +34,7 @@
     position: relative;
 }
 
-.welcome_box_input_group:first-of-type + .welcome_box_input_group{
+.welcome_box_input_group:first-of-type+.welcome_box_input_group {
     margin: 1.5em auto 0 auto;
 }
 
@@ -108,7 +109,9 @@
     animation: inputHighlighter 0.3s ease;
 }
 
+
 /*style our desktop view*/
+
 @media only screen and (min-width: 500px) {
     .welcome_logo {
         margin: 5% auto 0 auto;

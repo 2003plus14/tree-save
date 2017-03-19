@@ -2,75 +2,86 @@
     background: url('img/backgroundGood.png') no-repeat left top;
 }
 
+
 /*Transport buttons group*/
-.results_buttons_group{
+
+.results_buttons_group {
     margin: auto;
     position: relative;
     top: 90%;
 }
 
+
 /* sidebar properties */
-.results_sideBar{
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 60px;
-  transition: 0.5s;
+
+.results_sideBar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
 }
+
 
 /* sidebar links */
-.results_sidebar .results_sidebar_links{
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+
+.results_sidebar .results_sidebar_links {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
 }
+
 
 /* sidebar close button */
-.results_sideBar .results_sidebar_links{
-  position: absolute;
-  top: 0;
-  left: 1%;
-  font-size: 16px;
+
+.results_sideBar .results_sidebar_links {
+    position: absolute;
+    top: 0;
+    left: 1%;
+    font-size: 16px;
 }
 
+
 /* sidebar on small screens */
-@media screen and (max-height: 450px){
-    .results_sidebar{
+
+@media screen and (max-height: 450px) {
+    .results_sidebar {
         padding-top: 15px
     }
-    .results_sidebar .results_sidebar_links{
+    .results_sidebar .results_sidebar_links {
         font-size: 18px
     }
 }
 
+
 /* open sidebar button */
+
 .results_sidebar_open {
     position: absolute;
     top: 5;
     left: 1%;
- }
-
-.results_map {
-  float: right;
-  top: 5%;
-  left: 8%;
 }
 
+.results_map {
+    float: right;
+    top: 5%;
+    left: 8%;
+}
+
+
 /*this will be gone soon, dont mind me*/
-.results_info_pane{
-  position: absolute;
-  top: 5%;
-  right: 0px;
-  width: 150px;
-  border: 2px solid #0a290a;
-  padding: 10px;
-  background-color: #33cc33;
+
+.results_info_pane {
+    margin: 3em auto;
+    border: 2px solid #0a290a;
+    padding: 10px;
+    background-color: darkred;
 }
