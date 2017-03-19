@@ -9,8 +9,8 @@
 
 .welcome_box {
     width: 91%;
-    height: 60%;
-    margin: auto auto 30% auto;
+    margin: auto;
+    padding: 0 0 3% 0;
     background: rgba(0, 0, 0, 0.85);
 }
 
@@ -111,8 +111,8 @@
 /*style our desktop view*/
 @media only screen and (min-width: 500px) {
     .welcome_logo {
-        margin: 2% auto 0 auto;
-        width: 22%;
+        margin: 5% auto 0 auto;
+        width: 32%;
     }
     .welcome_box {
         margin: auto auto 80% auto;
