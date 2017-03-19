@@ -17,12 +17,20 @@
 .welcome_box .welcome_header_text {
     color: #FAFAFA;
     text-align: center;
-    padding: 1em 0;
+    padding: 0.5em 0 0 0;
+}
+
+.welcome_box .welcome_header_blurb {
+    color: #FAFAFA;
+    font-weight: 300;
+    font-size: 13px;
+    width: 70%;
+    margin: auto auto 1.5em auto;
 }
 
 .welcome_box .welcome_inputs_container {
     text-align: center;
-    margin: 0 0 0 0;
+    margin: 0;
 }
 
 
@@ -43,7 +51,7 @@
     font-size: 16px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 87%;
+    width: 95.6%;
     border: none;
     border-bottom: 1px solid #E8F5E9;
     outline: none;
@@ -92,7 +100,7 @@
 }
 
 .welcome_box_input_bar:before {
-    left: 42%;
+    left: 50%;
 }
 
 .welcome_box_input_bar:after {
@@ -121,5 +129,8 @@
         margin: auto auto 80% auto;
         width: 50%;
         border-radius: 3px;
+    }
+    .welcome_box_input_box {
+        width: 97.8%;
     }
 }
