@@ -21,31 +21,26 @@ html, body {
     vertical-align: middle;
 }
 
-.button_circle {
-    background: #FAFAFA;
+.button {
     border: none;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
     margin: 1em auto;
+    outline: none;
+}
+
+.button_circle {
+    background: #FAFAFA;
+    border-radius: 50%;
 }
 
 .button_circle:hover {
     background: #9E9E9E;
 }
 
-.button_circle:active {
-    outline: none;
-}
-
 .button_clean {
     background: transparent;
     color: #FAFAFA;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin: 1em auto;
 }
 
 .button_clean:hover {
