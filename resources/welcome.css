@@ -3,8 +3,8 @@
 }
 
 .welcome_logo {
-    width: 70%;
-    margin: auto;
+    width: 60%;
+    margin: 1em auto 0 auto;
 }
 
 .welcome_box {
@@ -125,7 +125,7 @@
 @media only screen and (min-width: 500px) {
     .welcome_logo {
         margin: 5% auto 0 auto;
-        width: 32%;
+        width: 22%;
     }
     .welcome_box {
         margin: auto auto 80% auto;
