@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body class="main results_background">
+<body class="main results_background" onload="generate_array()">
     <!-- side bar -->
     <div id="resultsBar" class="results_sidebar">
         <!-- buttons -->
@@ -35,19 +35,19 @@
 
     <!--Buttons-->
     <div class="results_buttons_group">
-        <button onclick="changeBackground(this.id, 'bad')" class='button button_circle'>
+        <button class='results_transport_buttons button button_circle'>
             <i class="fa fa-plane" aria-hidden="true"></i>
         </button>
-        <button onclick="changeBackground(this.id, 'good')" class='button button_circle'>
+        <button class='results_transport_buttons button button_circle'>
             <i class="fa fa-bicycle" aria-hidden="true"></i>
         </button>
-        <button onclick="changeBackground(this.id, 'good')" class='button button_circle'>
+        <button class='results_transport_buttons button button_circle'>
             <i class="fa fa-male" aria-hidden="true"></i>
         </button>
-        <button onclick="changeBackground(this.id, 'bad')" class='button button_circle'>
+        <button class='results_transport_buttons button button_circle'>
             <i class="fa fa-bus" aria-hidden="true"></i>
         </button>
-        <button onclick="changeBackground(this.id, 'bad')" class='button button_circle'>
+        <button class='results_transport_buttons button button_circle'>
             <i class="fa fa-car" aria-hidden="true"></i>
         </button>
     </div>
