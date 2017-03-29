@@ -20,23 +20,37 @@
 <body class="main results_background" onload="generate_array()">
     <!-- side bar -->
     <div id="resultsBar" class="results_sidebar">
-        <!-- buttons -->
+        <!-- button to close the side bar -->
         <button class="results_close_button button button_clean" onclick="closeNav()">
             <i class="fa fa-times fa-2x" aria-hidden="true"></i>
         </button>
+        <!-- our logo -->
         <a href='index.html'><img class='results_logo' src='resources/img/logo.png' /></a>
-        <hr/>
+        <!-- horizontal line -->
+        <hr>
+        <!-- the info box -->
         <div class="results_info_pane">
-            <p>You are releasing x emissions</p>
-            <p>This amounts to y dead trees!</p>
-            <p>You despicable human being</p>
+            <!-- template text -->
+            <p class="resultsInfoPaneText" >
+                You are releasing x emissions<br>
+                This amounts to y dead trees!<br>
+                You despicable human being
+            </p>
         </div>
     </div>
 
-    <button class="results_sidebar_open button button_clean" onclick="openNav()"><i class="fa fa-bars  fa-2x" aria-hidden="true"></i></button>
-    <a href="map.html"><button class="results_map button button_clean"><i class="fa fa-map fa-2x" aria-hidden="true"></i></button></a>
+    <!-- button to open our sidebar-->
+    <button class="results_sidebar_open button button_clean" onclick="openNav()">
+        <i class="fa fa-bars  fa-2x" aria-hidden="true"></i>
+    </button>
+    <!-- button to open the map-->
+    <a href="map.html">
+        <button class="results_map button button_clean">
+            <i class="fa fa-map fa-2x" aria-hidden="true"></i>
+        </button>
+    </a>
 
-    <!--Buttons-->
+    <!-- tranpsport type buttons at the bottom of the page -->
     <div class="results_buttons_group">
         <button class='results_transport_buttons button button_circle'>
             <i class="fa fa-plane fa-2x" aria-hidden="true"></i>
