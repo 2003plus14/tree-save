@@ -23,8 +23,6 @@ html, body {
 
 .button {
     border: none;
-    width: 40px;
-    height: 40px;
     margin: 1em auto;
 }
 
@@ -33,7 +31,10 @@ html, body {
 }
 
 .button_circle {
-    background: #FAFAFA;
+    width: 75px;
+    height: 75px;
+    color: #424242;
+    background: #E0E0E0;
     border-radius: 50%;
 }
 

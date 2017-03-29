@@ -2,6 +2,10 @@
     background: url('img/backgroundGood.png') no-repeat left top;
 }
 
+.results_logo {
+    width: 80%;
+    margin: 0 0 2em 0;
+}
 
 /*Transport buttons group*/
 
@@ -12,13 +16,13 @@
 }
 
 .results_transport_buttons_big {
-    width: 60px;
-    height: 60px;
+    width: 95px;
+    height: 95px;
 }
 
 .results_transport_buttons_middle {
-    width: 50px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
 }
 
 /* sidebar properties */
@@ -30,11 +34,15 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgba(0, 0, 0, 0.85);
     overflow-x: hidden;
     transition: 0.5s;
 }
 
+.results_close_button{
+    position: absolute;
+    margin: 10px 0;
+}
 
 /* sidebar links */
 
@@ -85,11 +93,13 @@
 }
 
 
-/*this will be gone soon, dont mind me*/
+/* this will be gone soon, dont mind me */
 
 .results_info_pane {
-    margin: 3em auto;
-    border: 2px solid #0a290a;
-    padding: 10px;
-    background-color: darkred;
+    color: white;
+    margin: 0 3%;
+    border: 2px solid white;
+    padding: 2em;
+    background-color: green;
+    box-shadow: 0 0 1em #212121;
 }
