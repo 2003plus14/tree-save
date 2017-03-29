@@ -33,6 +33,10 @@
     margin: 0;
 }
 
+.welcome_box .welcome_button {
+    margin: 3em;
+}
+
 /* input boxes styling */
 
 .welcome_box_input_group {
