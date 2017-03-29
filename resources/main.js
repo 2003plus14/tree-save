@@ -1,6 +1,5 @@
 var results_transport_buttons_array;
 var results_transport_buttons_array_type = [false, true, true, false, false];
-var results_background_boolean;
 
 // generate the array of buttons and add click events to each of them
 function generate_array(){
@@ -15,7 +14,7 @@ function generate_array(){
             toggleBtn(this, 'big'); 
             if( i + 1 < results_transport_buttons_array.length ) toggleBtn(results_transport_buttons_array[i+1], 'middle');
             if ( i - 1 > - 1 ) toggleBtn(results_transport_buttons_array[i-1], 'middle');
-            changeBackground();
+            changeBackground(i);
         });
     }
 }
@@ -33,15 +32,13 @@ function toggleBtn(element, type) {
 }
 
 // change the background dependant on the button press
-function changeBackground(){
-    if (results_background_boolean){
+function changeBackground(i){
+    if ( results_transport_buttons_array_type[ i ] ){
         document.body.style.backgroundImage = "url('resources/img/backgroundGood.png')";
         document.body.style.backgroundColor = "#053201";
-        results_background_boolean = false;
     } else {
         document.body.style.backgroundImage = "url('resources/img/backgroundBad.png')";
         document.body.style.backgroundColor = "#484848";
-        results_background_boolean = true;
     }
 }
 
