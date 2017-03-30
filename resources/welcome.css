@@ -37,6 +37,7 @@
     margin: 3em;
 }
 
+
 /* input boxes styling */
 
 .welcome_box_input_group {
@@ -76,7 +77,8 @@
     -webkit-transition: 0.2s ease all;
 }
 
-.welcome_box_input_box:focus~.welcome_box_input_label, .welcome_box_input_box:valid~.welcome_box_input_label {
+.welcome_box_input_box:focus~.welcome_box_input_label,
+.welcome_box_input_box:valid~.welcome_box_input_label {
     top: -20px;
     font-size: 14px;
     color: #D8DEE9;
@@ -91,7 +93,8 @@
     display: block;
 }
 
-.welcome_box_input_bar:before, .welcome_box_input_bar:after {
+.welcome_box_input_bar:before,
+.welcome_box_input_bar:after {
     content: '';
     height: 2px;
     width: 0;
@@ -112,7 +115,8 @@
     right: 50%;
 }
 
-.welcome_box_input_box:focus~.welcome_box_input_bar:before, input:focus~.welcome_box_input_bar:after {
+.welcome_box_input_box:focus~.welcome_box_input_bar:before,
+input:focus~.welcome_box_input_bar:after {
     width: 50%;
 }
 

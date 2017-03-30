@@ -7,6 +7,7 @@
     margin: 0 0 2em 0;
 }
 
+
 /*Transport buttons group*/
 
 .results_buttons_group {
@@ -25,6 +26,7 @@
     height: 85px;
 }
 
+
 /* sidebar properties */
 
 .results_sideBar {
@@ -39,10 +41,11 @@
     transition: 0.5s;
 }
 
-.results_close_button{
+.results_close_button {
     position: absolute;
     margin: 10px 0;
 }
+
 
 /* sidebar links */
 
