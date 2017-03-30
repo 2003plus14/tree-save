@@ -71,16 +71,15 @@ function build_map(){
     var map = new google.maps.Map(document.getElementById("google-map"), map_options);
 }
 
-
 // side bar
+// function to 'open' the sidebar
 function openNav(){
-  document.getElementById("resultsBar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-  document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+    // set the sidebars width to 250px, making it appear
+    document.getElementById("results_bar").style.width = "250px";
 }
 
+//function to 'close' the sidebar
 function closeNav(){
-  document.getElementById("resultsBar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-  document.body.style.backgroundColor = "white";
+    // set the sidebars width to 0, make it slide away
+  document.getElementById("results_bar").style.width = "0";
 }
