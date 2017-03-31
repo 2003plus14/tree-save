@@ -1,3 +1,5 @@
+/* main styling */
+/* boilerplate*/
 html,
 body {
     margin: 0;
@@ -6,11 +8,13 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* google maps sizing*/
 .google_map {
     width: 100%;
     height: 94.95%;
 }
 
+/* main background and alignment */
 .main {
     background: grey no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -22,15 +26,19 @@ body {
     vertical-align: middle;
 }
 
+/* button styling*/
+/* our shared style*/
 .button {
     border: none;
     margin: 1em auto;
 }
 
+/* remove the standard hover effect for both buttons*/
 .button:focus {
     outline: none;
 }
 
+/* the circle button style */
 .button_circle {
     width: 60px;
     height: 60px;
@@ -39,137 +47,41 @@ body {
     border-radius: 50%;
 }
 
+/* circle button hover effects */
 .button_circle:hover {
     background: #9E9E9E;
 }
 
+/* button style with nobackground */
 .button_clean {
     background: transparent;
     color: #FAFAFA;
 }
 
+/* clean button hover effects*/
 .button_clean:hover {
     color: #9E9E9E;
 }
 
+/* set the default results page background */
 .results_background {
     background: url('img/backgroundGood.png') no-repeat left top;
 }
 
-.results_logo {
-    width: 80%;
-    margin: 0 0 2em 0;
-}
+/* ********** welcome page ********** */
 
-
-/*Transport buttons group*/
-
-.results_buttons_group {
-    margin: auto;
-    position: relative;
-    top: 87%;
-}
-
-.results_transport_buttons_big {
-    width: 80px;
-    height: 80px;
-}
-
-.results_transport_buttons_middle {
-    width: 70px;
-    height: 70px;
-}
-
-
-/* sidebar properties */
-
-.results_sideBar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.85);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.results_close_button {
-    position: absolute;
-    margin: 10px 0;
-}
-
-
-/* sidebar links */
-
-.results_sidebar .results_sidebar_links {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-
-/* sidebar close button */
-
-.results_sideBar .results_sidebar_links {
-    position: absolute;
-    top: 0;
-    left: 1%;
-    font-size: 16px;
-}
-
-
-/* sidebar on small screens */
-
-@media screen and (max-height: 450px) {
-    .results_sidebar {
-        padding-top: 15px
-    }
-    .results_sidebar .results_sidebar_links {
-        font-size: 18px
-    }
-}
-
-
-/* open sidebar button */
-
-.results_sidebar_open {
-    position: absolute;
-    top: 5;
-    left: 1%;
-}
-
-.results_map {
-    float: right;
-    top: 5%;
-    left: 8%;
-}
-
-
-/* this will be gone soon, dont mind me */
-
-.results_info_pane {
-    color: white;
-    margin: 0 3%;
-    border: 2px solid white;
-    padding: 2em;
-    background-color: green;
-    box-shadow: 0 0 1em #212121;
-}
-
+/* set the welcome page background*/
 .welcome_background {
     background: url('img/background.jpg');
 }
 
+/* sizing the welcome page logo (mobile) */
 .welcome_logo {
     width: 60%;
     margin: 1em auto 0 auto;
 }
 
+/* sizing & styling the welcome box which (mobile) */
 .welcome_box {
     width: 91%;
     margin: auto;
@@ -177,12 +89,14 @@ body {
     background: rgba(0, 0, 0, 0.85);
 }
 
+/* style thee header text */
 .welcome_box .welcome_header_text {
     color: #FAFAFA;
     text-align: center;
     padding: 0.5em 0 0 0;
 }
 
+/* style the welcome info*/
 .welcome_box .welcome_header_blurb {
     color: #FAFAFA;
     font-weight: 300;
@@ -191,42 +105,49 @@ body {
     margin: auto auto 1.5em auto;
 }
 
+/* placemeent of the input boxes*/
 .welcome_box .welcome_inputs_container {
     text-align: center;
     margin: 0;
 }
 
+/* placement of the map and submit buttons*/
 .welcome_box .welcome_button {
     margin: 3em;
 }
 
 
 /* input boxes styling */
-
-.welcome_box_input_group {
+/* placement for the individual input box ( which is made of three elements ) */
+.welcome_box .welcome_box_input_group {
     width: 70%;
     margin: auto;
     position: relative;
 }
 
+/* space the two input box groups */
 .welcome_box_input_group:first-of-type+.welcome_box_input_group {
     margin: 1.5em auto 0 auto;
 }
 
-.welcome_box_input_box {
+/* style the input element*/
+.welcome_box .welcome_box_input_group .welcome_box_input_box {
     background: transparent;
     font-size: 16px;
     padding: 10px 10px 10px 5px;
     display: block;
     border: none;
     border-bottom: 1px solid #E8F5E9;
+    color: #E8F5E9;
 }
 
-.welcome_box_input_box:focus {
+/* remove the default on focous effect */
+.welcome_box .welcome_box_input_group .welcome_box_input_box:focus {
     outline: none;
 }
 
-.welcome_box .welcome_box_input_label {
+/* styling for the 'placeholder' text */
+.welcome_box .welcome_box_input_group .welcome_box_input_label {
     color: #D8DEE9;
     font-size: 18px;
     font-weight: normal;
@@ -240,24 +161,23 @@ body {
     -webkit-transition: 0.2s ease all;
 }
 
-.welcome_box_input_box:focus~.welcome_box_input_label,
-.welcome_box_input_box:valid~.welcome_box_input_label {
+/* move the placeholder text above the input box */
+.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_label,
+.welcome_box .welcome_box_input_group .welcome_box_input_box:valid~.welcome_box_input_label {
     top: -20px;
     font-size: 14px;
     color: #D8DEE9;
 }
 
-.welcome_box .welcome_box_input_box {
-    color: #E8F5E9;
-}
-
-.welcome_box_input_bar {
+/* place the line on the bottom of the input box */
+.welcome_box .welcome_box_input_group .welcome_box_input_bar {
     position: relative;
     display: block;
 }
 
-.welcome_box_input_bar:before,
-.welcome_box_input_bar:after {
+/* style the bar on the bottom */
+.welcome_box .welcome_box_input_group .welcome_box_input_bar:before,
+.welcome_box .welcome_box_input_group .welcome_box_input_bar:after {
     content: '';
     height: 2px;
     width: 0;
@@ -270,39 +190,118 @@ body {
     -webkit-transition: 0.2s ease all;
 }
 
-.welcome_box_input_bar:before {
+/* make the bar span the input after being selected */
+.welcome_box .welcome_box_input_group .welcome_box_input_bar:before, {
     left: 50%;
 }
 
-.welcome_box_input_bar:after {
+/* make the bar span the input after being selected */
+.welcome_box .welcome_box_input_group .welcome_box_input_bar:after {
     right: 50%;
 }
 
-.welcome_box_input_box:focus~.welcome_box_input_bar:before,
-input:focus~.welcome_box_input_bar:after {
+/* set the width on being clicked*/
+.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_bar:before,
+.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_bar:after {
     width: 50%;
 }
 
-.welcome_box_input_box:focus~.highlight {
+/* make the effect smooth instead of just popping in */
+.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.highlight {
     -webkit-animation: inputHighlighter 0.3s ease;
     -moz-animation: inputHighlighter 0.3s ease;
     animation: inputHighlighter 0.3s ease;
 }
 
 
-/*style our desktop view*/
+/* ********** results page ********** */
+/* placement of the group of buttons*/
+.results_buttons_group {
+    margin: auto;
+    position: relative;
+    top: 87%;
+}
 
+/* sizing for the selected button */
+.results_transport_buttons_big {
+    width: 80px;
+    height: 80px;
+}
+
+/* sizing for the adjacent buttons*/
+.results_transport_buttons_middle {
+    width: 70px;
+    height: 70px;
+}
+
+
+/* sidebar properties */
+/* sizingg and styling the sidebar*/
+.results_sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+/* placement for the sidebar close button */
+.results_sidebar .results_close_button {
+    position: absolute;
+    margin: 10px 0;
+}
+
+/* sizing for the logo in the side bar*/
+.results_sidebar .results_logo {
+    width: 80%;
+    margin: 0 0 2em 0;
+}
+
+/* open sidebar button */
+/* placement of the button to open the sidebar*/
+.results_sidebar_open {
+    position: absolute;
+    top: 5;
+    left: 1%;
+}
+
+/* placement of the button to open the map */
+.results_map {
+    float: right;
+    top: 5%;
+    left: 8%;
+}
+
+/* temp info pane styling*/
+.results_info_pane {
+    color: white;
+    margin: 0 3%;
+    border: 2px solid white;
+    padding: 2em;
+    background-color: green;
+    box-shadow: 0 0 1em #212121;
+}
+
+/* ********** desktop specific stuff ********** */
+/* specific style for the desktop view */
 @media only screen and (min-width: 500px) {
+    /* reduce the scaling effect of the logo */
     .welcome_logo {
         margin: 5% auto 0 auto;
         width: 22%;
     }
+    /* make the box abit smaller */
     .welcome_box {
         margin: auto auto 80% auto;
         width: 50%;
         border-radius: 3px;
     }
-    .welcome_box_input_box {
+    /* reduce the width of the input box*/
+    .welcome_box .welcome_box_input_group .welcome_box_input_box {
         width: 97.8%;
     }
 }
