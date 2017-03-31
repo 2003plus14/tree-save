@@ -32,8 +32,8 @@ body {
 }
 
 .button_circle {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     color: #424242;
     background: #E0E0E0;
     border-radius: 50%;
@@ -50,4 +50,259 @@ body {
 
 .button_clean:hover {
     color: #9E9E9E;
+}
+
+.results_background {
+    background: url('img/backgroundGood.png') no-repeat left top;
+}
+
+.results_logo {
+    width: 80%;
+    margin: 0 0 2em 0;
+}
+
+
+/*Transport buttons group*/
+
+.results_buttons_group {
+    margin: auto;
+    position: relative;
+    top: 87%;
+}
+
+.results_transport_buttons_big {
+    width: 80px;
+    height: 80px;
+}
+
+.results_transport_buttons_middle {
+    width: 70px;
+    height: 70px;
+}
+
+
+/* sidebar properties */
+
+.results_sideBar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.results_close_button {
+    position: absolute;
+    margin: 10px 0;
+}
+
+
+/* sidebar links */
+
+.results_sidebar .results_sidebar_links {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+
+/* sidebar close button */
+
+.results_sideBar .results_sidebar_links {
+    position: absolute;
+    top: 0;
+    left: 1%;
+    font-size: 16px;
+}
+
+
+/* sidebar on small screens */
+
+@media screen and (max-height: 450px) {
+    .results_sidebar {
+        padding-top: 15px
+    }
+    .results_sidebar .results_sidebar_links {
+        font-size: 18px
+    }
+}
+
+
+/* open sidebar button */
+
+.results_sidebar_open {
+    position: absolute;
+    top: 5;
+    left: 1%;
+}
+
+.results_map {
+    float: right;
+    top: 5%;
+    left: 8%;
+}
+
+
+/* this will be gone soon, dont mind me */
+
+.results_info_pane {
+    color: white;
+    margin: 0 3%;
+    border: 2px solid white;
+    padding: 2em;
+    background-color: green;
+    box-shadow: 0 0 1em #212121;
+}
+
+.welcome_background {
+    background: url('img/background.jpg');
+}
+
+.welcome_logo {
+    width: 60%;
+    margin: 1em auto 0 auto;
+}
+
+.welcome_box {
+    width: 91%;
+    margin: auto;
+    background: black;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.welcome_box .welcome_header_text {
+    color: #FAFAFA;
+    text-align: center;
+    padding: 0.5em 0 0 0;
+}
+
+.welcome_box .welcome_header_blurb {
+    color: #FAFAFA;
+    font-weight: 300;
+    font-size: 13px;
+    width: 70%;
+    margin: auto auto 1.5em auto;
+}
+
+.welcome_box .welcome_inputs_container {
+    text-align: center;
+    margin: 0;
+}
+
+.welcome_box .welcome_button {
+    margin: 3em;
+}
+
+
+/* input boxes styling */
+
+.welcome_box_input_group {
+    width: 70%;
+    margin: auto;
+    position: relative;
+}
+
+.welcome_box_input_group:first-of-type+.welcome_box_input_group {
+    margin: 1.5em auto 0 auto;
+}
+
+.welcome_box_input_box {
+    background: transparent;
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #E8F5E9;
+}
+
+.welcome_box_input_box:focus {
+    outline: none;
+}
+
+.welcome_box .welcome_box_input_label {
+    color: #D8DEE9;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.welcome_box_input_box:focus~.welcome_box_input_label,
+.welcome_box_input_box:valid~.welcome_box_input_label {
+    top: -20px;
+    font-size: 14px;
+    color: #D8DEE9;
+}
+
+.welcome_box .welcome_box_input_box {
+    color: #E8F5E9;
+}
+
+.welcome_box_input_bar {
+    position: relative;
+    display: block;
+}
+
+.welcome_box_input_bar:before,
+.welcome_box_input_bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #D8DEE9;
+    transition: 0.2s ease all;
+    -o-transition: 02s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.welcome_box_input_bar:before {
+    left: 50%;
+}
+
+.welcome_box_input_bar:after {
+    right: 50%;
+}
+
+.welcome_box_input_box:focus~.welcome_box_input_bar:before,
+input:focus~.welcome_box_input_bar:after {
+    width: 50%;
+}
+
+.welcome_box_input_box:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+
+/*style our desktop view*/
+
+@media only screen and (min-width: 500px) {
+    .welcome_logo {
+        margin: 5% auto 0 auto;
+        width: 22%;
+    }
+    .welcome_box {
+        margin: auto auto 80% auto;
+        width: 50%;
+        border-radius: 3px;
+    }
+    .welcome_box_input_box {
+        width: 97.8%;
+    }
 }
