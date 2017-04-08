@@ -26,26 +26,26 @@
         <p class='welcome_header_blurb'>
             welcome to the tree save webapp, please input a start and destination in the boxes below or use the map icon choose from a map.
         </p>
-        <div class='welcome_inputs_container'>
+        <form class='welcome_inputs_container' action='results.html' >
             <div class='welcome_box_input_group'>
-                <input class='welcome_box_input_box' type='text' required>
+                <input class='welcome_box_input_box' type='text' autofocus  autocomplete="On" required>
                 <span class='welcome_box_input_bar'></span>
                 <label class='welcome_box_input_label'>Start</label>
             </div>
             <div class='welcome_box_input_group'>
-                <input class='welcome_box_input_box' type='text' required>
+                <input class='welcome_box_input_box' type='text' autocomplete="On" required>
                 <span class='welcome_box_input_bar'></span>
                 <label class='welcome_box_input_label'>Destination</label>
             </div>
-        </div>
+            <button class='button button_circle welcome_button'>
+                <input type='submit' style='display:none;' value=''>
+                <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
+            </button>
+        </a>
+        </form>
         <a href='map.html'>
             <button class='button button_circle welcome_button'>
                 <i class='fa fa-map fa-2x' aria-hidden='true'></i>
-            </button>
-        </a>
-        <a href='results.html'>
-            <button class='button button_circle welcome_button'>
-                <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
             </button>
         </a>
     </div>
