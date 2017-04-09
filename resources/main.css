@@ -69,8 +69,20 @@ html, body {
 /* ********** welcome page ********** */
 
 /* set the welcome page background*/
-.welcome_background {
+.main:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
     background: url('img/background.jpg');
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
 }
 
 /* sizing the welcome page logo (mobile) */
