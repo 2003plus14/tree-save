@@ -1,9 +1,5 @@
 // array to hold all of our transport buttons
 var results_transport_buttons_array;
-// array to tell whether the button is good or bad (temporary)
-var results_transport_buttons_array_type = [false, true, true, false, false];
-// map
-var map;
 
 // generate the array of buttons and add click events to each of them
 function generate_array() {
@@ -45,6 +41,8 @@ function results_button_size(element, type) {
 
 // change the background dependant on the button press
 function results_background_change(i) {
+    // array to tell whether the button is good or bad (temporary)
+    var results_transport_buttons_array_type = [false, true, true, false, false];
     // if the button is good at i
     if (results_transport_buttons_array_type[i]) {
         // set the background
@@ -72,10 +70,9 @@ function build_map() {
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
     // make the google map
-    map = new google.maps.Map(document.getElementById("google_map"), map_options);
+    var map = new google.maps.Map(document.getElementById("google_map"), map_options);
 }
 
-// side bar
 // function to 'open' the sidebar
 function openNav() {
     // set the sidebars width to 250px, making it appear
