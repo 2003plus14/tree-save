@@ -25,6 +25,7 @@ function generate_array() {
             results_background_change(i);
         });
     }
+    results_transport_buttons_array[2].click();
 }
 
 // function to clear the selected buttons
@@ -36,7 +37,7 @@ function results_button_pressed() {
     }
 }
 
-// function to change swap classes around
+// function to set the class
 function results_button_size(element, type) {
     // set the classname of the element to the class plus the type (big or middle)
     element.className += ' results_transport_buttons_' + type;
