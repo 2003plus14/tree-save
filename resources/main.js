@@ -61,7 +61,6 @@ function results_background_change(i) {
 
 // function to set the options then draw the map
 function build_map() {
-    document.getElementsByClassName("google_map")[0].style.height = window.innerHeight;
     // set the configuration of the google map
     var map_options = {
         // set the cneter latitude and longitude
