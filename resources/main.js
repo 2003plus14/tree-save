@@ -2,6 +2,8 @@
 var results_transport_buttons_array;
 // array to tell whether the button is good or bad (temporary)
 var results_transport_buttons_array_type = [false, true, true, false, false];
+// map
+var map;
 
 // generate the array of buttons and add click events to each of them
 function generate_array() {
@@ -59,6 +61,7 @@ function results_background_change(i) {
 
 // function to set the options then draw the map
 function build_map() {
+    document.getElementsByClassName("google_map")[0].style.height = window.innerHeight;
     // set the configuration of the google map
     var map_options = {
         // set the cneter latitude and longitude
@@ -69,7 +72,7 @@ function build_map() {
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
     // make the google map
-    var map = new google.maps.Map(document.getElementById("google-map"), map_options);
+    map = new google.maps.Map(document.getElementById("google_map"), map_options);
 }
 
 // side bar
