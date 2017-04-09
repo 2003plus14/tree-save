@@ -217,8 +217,11 @@ html, body {
 /* placement of the group of buttons*/
 .results_buttons_group {
     margin: auto;
-    position: relative;
-    top: 87%;
+    position: absolute;
+    width: 360px;
+    top: 85%;
+    left: 50%;
+    margin-left: -180px;
 }
 
 /* sizing for the selected button */
@@ -303,4 +306,10 @@ html, body {
     .welcome_box .welcome_box_input_group .welcome_box_input_box {
         width: 97.8%;
     }
+
+
+    /* placement of the group of buttons*/
+.results_buttons_group {
+    top: 90%;
+}
 }
