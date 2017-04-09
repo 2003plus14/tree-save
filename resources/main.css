@@ -101,18 +101,19 @@ html, body {
     font-weight: 300;
     font-size: 13px;
     width: 70%;
-    margin: auto auto 1.5em auto;
+    margin: auto auto 2em auto;
 }
 
 /* placemeent of the input boxes*/
 .welcome_box .welcome_inputs_container {
+    display: inline;
     text-align: center;
     margin: 0;
 }
 
-/* placement of the map and submit buttons*/
+/* placement of the map button*/
 .welcome_box .welcome_button {
-    margin: 3em;
+    margin: 1em;
 }
 
 
@@ -126,7 +127,7 @@ html, body {
 
 /* space the two input box groups */
 .welcome_box_input_group:first-of-type+.welcome_box_input_group {
-    margin: 1.5em auto 0 auto;
+    margin: 1.5em auto 1em auto;
 }
 
 /* style the input element*/
