@@ -1,8 +1,7 @@
 // array to hold all of our transport buttons
 var results_transport_buttons_array;
 // array to hold all of our location selection boxes
-var welcome_input_boxes_array;
-var welcome_input_b
+var welcome_input_autocomplete_array;
 
 // generate the array of buttons and add click events to each of them
 function generate_array() {
@@ -90,12 +89,9 @@ function closeNav() {
 
 function welcome_load() {
     var welcome_input_boxes_array = document.getElementsByClassName('welcome_box_input_box');
-    var options = {
-        types: ['(cities)']
-    };
+    var options = {types: ['(cities)']};
 
     for (let i = 0; i < welcome_input_boxes_array.length; i++) {
-         = new google.maps.places.Autocomplete(welcome_input_boxes_array[i], options);
+         welcome_input_autocomplete_array[i] = new google.maps.places.Autocomplete(welcome_input_boxes_array[i], options);
     }
-
 }
