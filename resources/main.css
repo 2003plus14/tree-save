@@ -231,7 +231,7 @@ html, body {
     margin: auto;
     position: absolute;
     width: 360px;
-    top: 85%;
+    bottom: 0;
     left: 50%;
     margin-left: -180px;
 }
@@ -306,8 +306,8 @@ html, body {
 @media only screen and (min-width: 500px) {
     /* reduce the scaling effect of the logo */
     .welcome_logo {
-        margin: 5% auto 0 auto;
-        width: 22%;
+        margin: 2% auto 0 auto;
+        width: 20%;
     }
     /* make the box abit smaller */
     .welcome_box {
@@ -319,10 +319,12 @@ html, body {
     .welcome_box .welcome_box_input_group .welcome_box_input_box {
         width: 97.8%;
     }
-
-
     /* placement of the group of buttons*/
-.results_buttons_group {
-    top: 90%;
 }
+
+@media only screen and (min-width: 600){
+    .welcome_logo {
+        margin: 5% auto 0 auto;
+        width: 22%;
+    }
 }
