@@ -9,13 +9,15 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <!-- import the font awesome (icon) pack -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <!-- hello -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places"></script>
     <!-- import our css file -->
     <link rel='stylesheet' type='text/css' href='resources/main.css'>
     <!-- import our js file -->
     <script type='text/javascript' src='resources/main.js'></script>
 </head>
 
-<body class='main welcome_background'>
+<body onload='welcome_load()' class='main welcome_background'>
     <a href='about.html'><img class='welcome_logo' src='resources/img/logo.png' /></a>
     <div class='welcome_box'>
         <h2 class='welcome_header_text'>tree save</h2>
@@ -24,12 +26,12 @@
         </p>
         <form class='welcome_inputs_container' action='results.html' >
             <div class='welcome_box_input_group'>
-                <input class='welcome_box_input_box' type='text' autofocus  autocomplete="On" required>
+                <input class='welcome_box_input_box' placeholder='' type='text' autofocus  autocomplete="On" required>
                 <span class='welcome_box_input_bar'></span>
                 <label class='welcome_box_input_label'>start</label>
             </div>
             <div class='welcome_box_input_group'>
-                <input class='welcome_box_input_box' type='text' autocomplete="On" required>
+                <input class='welcome_box_input_box' placeholder='' type='text' autocomplete="On" required>
                 <span class='welcome_box_input_bar'></span>
                 <label class='welcome_box_input_label'>destination</label>
             </div>

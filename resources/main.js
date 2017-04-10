@@ -84,3 +84,17 @@ function closeNav() {
     // set the sidebars width to 0, make it slide away
     document.getElementById("results_bar").style.width = "0";
 }
+
+function welcome_load() {
+    var inputs = document.getElementsByClassName('welcome_box_input_box');
+    var options = {
+        types: ['(cities)'],
+        componentRestrictions: {
+        }
+    };
+
+    for (let i = 0; i < inputs.length; i++) {
+        var autocomplete = new google.maps.places.Autocomplete(inputs[i], options);
+    }
+
+}
