@@ -10,7 +10,6 @@
     <!-- import the font awesome (icon) pack -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <!-- hello -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places"></script>
     <!-- import our css file -->
     <link rel='stylesheet' type='text/css' href='resources/main.css'>
     <!-- import our js file -->
@@ -40,11 +39,13 @@
                 <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
             </button>
         <!--</form>-->
-        <a href='map.html'>
-            <button class='button button_circle welcome_button'>
+            <button class='button button_circle welcome_button' onclick='welcome_show_map()'>
                 <i class='fa fa-map fa-2x' aria-hidden='true'></i>
             </button>
-        </a>
+    </div>
+    <!-- container for our google map -->
+    <div class='welcome_google_map' id='google_map'>
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places&callback=build_map'></script>
     </div>
 </body>
 

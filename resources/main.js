@@ -1,9 +1,9 @@
 // array to hold all of our location selection boxes
-var welcome_input_boxes_array = [null];
+var welcome_input_boxes_array = [null],
 // array to hold all of our transport buttons
-var results_transport_buttons_array;
+    results_transport_buttons_array,
 // array for the place_id's that were selected
-var results_place_ids_array = [null];
+    results_place_ids_array = [null];
 
 // generate the array of buttons and add click events to each of them
 function generate_array() {
@@ -91,8 +91,8 @@ function closeNav() {
 
 // function to set the input boxes to integrate with places api
 function welcome_load() {
-    let welcome_input_boxes_arraya = document.getElementsByClassName('welcome_box_input_box');
-    var options = {types: ['(cities)']};
+    let welcome_input_boxes_arraya = document.getElementsByClassName('welcome_box_input_box'),
+        options = {types: ['(cities)']};
 
     for (let i = 0; i < welcome_input_boxes_arraya.length; i++)
         welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(welcome_input_boxes_arraya[i], options);
@@ -103,4 +103,9 @@ function welcome_inputs_selected() {
     for ( let i = 0 ; i < welcome_input_boxes_array.length ; i++ ){
         results_place_ids_array[i] = welcome_input_boxes_array[i].getPlace();
     }
+}
+
+// function to dispaly the map on button press
+function welcome_show_map() {
+    document.getElementById("google_map").style.display = 'block';
 }
