@@ -1,5 +1,5 @@
 // array to hold all of our location selection boxes
-var welcome_input_boxes_array = [null, null];
+var welcome_input_boxes_array = [null];
 // array to hold all of our transport buttons
 var results_transport_buttons_array;
 // array for the place_id's that were selected
@@ -100,9 +100,7 @@ function welcome_load() {
 
 // function to get the inputs from the buttons
 function welcome_inputs_selected() {
-    console.log('hello');
     for ( let i = 0 ; i < welcome_input_boxes_array.length ; i++ ){
         results_place_ids_array[i] = welcome_input_boxes_array[i].getPlace();
-        console.log(results_place_ids_array[i]);
     }
 }
