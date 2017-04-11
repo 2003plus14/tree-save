@@ -107,5 +107,5 @@ function welcome_inputs_selected() {
 
 // function to dispaly the map on button press
 function welcome_show_map() {
-    document.getElementById("google_map").style.display = 'block';
+    document.getElementById("google_map").style.zIndex = '100';
 }

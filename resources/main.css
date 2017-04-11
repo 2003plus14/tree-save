@@ -225,10 +225,9 @@ html, body {
     position: absolute;
     top: 2.5vh;
     left: 2.5vw;
-    z-index: 100;
+    z-index: -2;
     background: white;
     box-shadow: black 0 0 10px;
-    display: none;
 }
 
 
