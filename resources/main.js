@@ -1,9 +1,16 @@
+var infoButtons = "<br><p>is this the correct place?<p><br>\
+                    <button class='button welcome_info_button' id='yes'>yes</button>\
+                    <button class='button welcome_info_button' id='no'>no</button>"
+var welcome_markers;
+var welcome_start_chosen = false;
 // array to hold all of our location selection boxes
 var welcome_input_boxes_array = [null],
 // array to hold all of our transport buttons
     results_transport_buttons_array,
 // array for the place_id's that were selected
-    results_place_ids_array = [null];
+    results_place_ids_array = [null],
+    results_start;
+var welcome_input_boxes_arraya;
 
 // generate the array of buttons and add click events to each of them
 function generate_array() {
@@ -61,7 +68,6 @@ function results_background_change(i) {
     }
 }
 
-
 // function to set the options then draw the map
 function build_map() {
     // set the configuration of the google map
@@ -73,8 +79,51 @@ function build_map() {
         // set the type of map
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
+    var geocoder = new google.maps.Geocoder;
+    var infowindow = new google.maps.InfoWindow;
     // make the google map
     var map = new google.maps.Map(document.getElementById("google_map"), map_options);
+    google.maps.event.addListener(map, 'click', function(event) {
+        geocodeLatLng(geocoder, map, infowindow, event.latLng);
+    });
+}
+
+function geocodeLatLng(geocoder, map, infowindow, location) {
+  var latlng = {lat: location.lat(), lng: location.lng()};
+  geocoder.geocode({'location': latlng}, function(results, status) {
+    if (status === 'OK') {
+      if (results[1]) {
+        var marker = new google.maps.Marker({
+          position: latlng,
+          map: map
+        });
+        infowindow.setContent(results[1].formatted_address+infoButtons);
+        infowindow.open(map, marker);
+        var btns = document.getElementsByClassName('welcome_info_button');
+        for ( let i = 0 ; i < btns.length ; i++){
+            btns[i].addEventListener('click', function(){
+                    welcome_info_button_press(btns[i], marker, infowindow, results[1].formatted_address);
+            })
+        }
+      } else {
+        window.alert('No results found');
+      }
+    } else {
+      window.alert('Geocoder failed due to: ' + status);
+    }
+
+  });
+}
+
+function welcome_info_button_press(btn, marker, info, loc){
+    if ( btn.id == 'yes'){
+        welcome_input_boxes_arraya[0].value = '' + loc;
+        results_start = loc;
+        document.getElementById("google_map").style.zIndex = '-2';
+    } else {
+        info = null;
+        marker = null;
+    }
 }
 
 // function to 'open' the sidebar
@@ -91,8 +140,8 @@ function closeNav() {
 
 // function to set the input boxes to integrate with places api
 function welcome_load() {
-    let welcome_input_boxes_arraya = document.getElementsByClassName('welcome_box_input_box'),
-        options = {types: ['(cities)']};
+    welcome_input_boxes_arraya = document.getElementsByClassName('welcome_box_input_box');
+        var options = {types: ['(cities)']};
 
     for (let i = 0; i < welcome_input_boxes_arraya.length; i++)
         welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(welcome_input_boxes_arraya[i], options);

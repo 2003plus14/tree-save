@@ -25,6 +25,11 @@ html, body {
     margin: 1em auto;
 }
 
+/* button hover effects */
+.button:hover {
+    background: #9E9E9E;
+}
+
 /* remove the standard hover effect for both buttons*/
 .button:focus {
     outline: none;
@@ -39,20 +44,10 @@ html, body {
     border-radius: 50%;
 }
 
-/* circle button hover effects */
-.button_circle:hover {
-    background: #9E9E9E;
-}
-
 /* button style with nobackground */
 .button_clean {
     background: transparent;
     color: #FAFAFA;
-}
-
-/* clean button hover effects*/
-.button_clean:hover {
-    color: #9E9E9E;
 }
 
 /* set the default results page background */
