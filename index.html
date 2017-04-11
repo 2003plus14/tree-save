@@ -25,11 +25,17 @@
         </p>
         <!--<form class='welcome_inputs_container' >-->
             <div class='welcome_box_input_group'>
+                <button class='button button_clean welcome_button' onclick='welcome_show_map(start)'>
+                    <i class='fa fa-map fa-2x' aria-hidden='true'></i>
+                </button>
                 <input class='welcome_box_input_box' placeholder='' type='text' autofocus  autocomplete="On" required>
                 <span class='welcome_box_input_bar'></span>
                 <label class='welcome_box_input_label'>start</label>
             </div>
             <div class='welcome_box_input_group'>
+                <button class='button button_clean welcome_button' onclick='welcome_show_map(dest)'>
+                    <i class='fa fa-map fa-2x' aria-hidden='true'></i>
+                </button>
                 <input class='welcome_box_input_box' placeholder='' type='text' autocomplete="On" required>
                 <span class='welcome_box_input_bar'></span>
                 <label class='welcome_box_input_label'>destination</label>
@@ -39,9 +45,7 @@
                 <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
             </button>
         <!--</form>-->
-            <button class='button button_circle welcome_button' onclick='welcome_show_map()'>
-                <i class='fa fa-map fa-2x' aria-hidden='true'></i>
-            </button>
+
     </div>
     <!-- container for our google map -->
     <div class='welcome_google_map' id='google_map'>

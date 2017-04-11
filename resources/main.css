@@ -113,14 +113,14 @@ html, body {
 
 /* placement of the map button*/
 .welcome_box .welcome_button {
-    margin: 1em;
+    float: right;
 }
 
 
 /* input boxes styling */
 /* placement for the individual input box ( which is made of three elements ) */
 .welcome_box .welcome_box_input_group {
-    width: 70%;
+    width: 90%;
     margin: auto;
     position: relative;
 }
@@ -173,6 +173,7 @@ html, body {
 .welcome_box .welcome_box_input_group .welcome_box_input_bar {
     position: relative;
     display: block;
+    width: 81%;
 }
 
 /* style the bar on the bottom */
