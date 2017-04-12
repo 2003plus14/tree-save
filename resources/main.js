@@ -1,16 +1,16 @@
 var infoButtons = "<br><p>is this the correct place?<p><br>\
                     <button class='button welcome_info_button' id='yes'>yes</button>\
-                    <button class='button welcome_info_button' id='no'>no</button>"
-var welcome_markers;
-var welcome_start_chosen = false;
-// array to hold all of our location selection boxes
-var welcome_input_boxes_array = [null],
-// array to hold all of our transport buttons
+                    <button class='button welcome_info_button' id='no'>no</button>",
+    welcome_input_boxes_arraya,
+    welcome_which_map,
+    // array to hold all of our location selection boxes
+    welcome_input_boxes_array = [],
+    // array to hold all of our transport buttons
     results_transport_buttons_array,
-// array for the place_id's that were selected
-    results_place_ids_array = [null],
-    results_start;
-var welcome_input_boxes_arraya;
+    // array for the place_id's that were selected
+    results_place_ids_array = [],
+    results_location_array = [],
+    welcome_markers = null;
 
 // generate the array of buttons and add click events to each of them
 function generate_array() {
@@ -79,51 +79,49 @@ function build_map() {
         // set the type of map
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
-    var geocoder = new google.maps.Geocoder;
-    var infowindow = new google.maps.InfoWindow;
-    // make the google map
-    var map = new google.maps.Map(document.getElementById("google_map"), map_options);
-    google.maps.event.addListener(map, 'click', function(event) {
+    var geocoder = new google.maps.Geocoder,
+        infowindow = new google.maps.InfoWindow,
+        // make the google map
+        map = new google.maps.Map(document.getElementById("google_map"), map_options);
+    google.maps.event.addListener(map, 'click', function (event) {
+        if (welcome_markers) welcome_markers.setMap(null);
         geocodeLatLng(geocoder, map, infowindow, event.latLng);
     });
 }
 
 function geocodeLatLng(geocoder, map, infowindow, location) {
-  var latlng = {lat: location.lat(), lng: location.lng()};
-  geocoder.geocode({'location': latlng}, function(results, status) {
-    if (status === 'OK') {
-      if (results[1]) {
+    geocoder.geocode({ 'location': location }, function (results, status) {
         var marker = new google.maps.Marker({
-          position: latlng,
-          map: map
+            position: location,
+            map: map
         });
-        infowindow.setContent(results[1].formatted_address+infoButtons);
+        welcome_markers = marker;
+        if (status === 'OK') {
+            infowindow.setContent(results[0].formatted_address + infoButtons);
+            infowindow.open(map, marker);
+            var btns = document.getElementsByClassName('welcome_info_button');
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].addEventListener('click', function () {
+                    if (btns[i].id === 'yes') welcome_info_button_press(btns[i], marker, infowindow, results[1].formatted_address);
+                    welcome_markers.setMap(null);
+                });
+            }
+        } else if (status === 'OVER_QUERY_LIMIT') infowindow.setContent('<h2>slow down!</h2><h4>too many requests</h4>');
+        else if (status === 'ZERO_RESULTS') infowindow.setContent('<h3>sorry no results found!</h3><h1>:(</h1>');
+        else infowindow.setContent('<h3>something has gone terribly wrong</h3>');
         infowindow.open(map, marker);
-        var btns = document.getElementsByClassName('welcome_info_button');
-        for ( let i = 0 ; i < btns.length ; i++){
-            btns[i].addEventListener('click', function(){
-                    welcome_info_button_press(btns[i], marker, infowindow, results[1].formatted_address);
-            })
-        }
-      } else {
-        window.alert('No results found');
-      }
-    } else {
-      window.alert('Geocoder failed due to: ' + status);
-    }
-
-  });
+    });
 }
 
-function welcome_info_button_press(btn, marker, info, loc){
-    if ( btn.id == 'yes'){
+function welcome_info_button_press(btn, marker, info, loc) {
+    if (welcome_which_map == 'start') {
         welcome_input_boxes_arraya[0].value = '' + loc;
-        results_start = loc;
-        document.getElementById("google_map").style.zIndex = '-2';
+        results_location_array[0] = loc;
     } else {
-        info = null;
-        marker = null;
+        welcome_input_boxes_arraya[1].value = '' + loc;
+        results_location_array[1] = loc;
     }
+    document.getElementById("google_map").style.zIndex = '-2';
 }
 
 // function to 'open' the sidebar
@@ -141,7 +139,7 @@ function closeNav() {
 // function to set the input boxes to integrate with places api
 function welcome_load() {
     welcome_input_boxes_arraya = document.getElementsByClassName('welcome_box_input_box');
-        var options = {types: ['(cities)']};
+    var options = { types: ['(cities)'] };
 
     for (let i = 0; i < welcome_input_boxes_arraya.length; i++)
         welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(welcome_input_boxes_arraya[i], options);
@@ -149,12 +147,13 @@ function welcome_load() {
 
 // function to get the inputs from the buttons
 function welcome_inputs_selected() {
-    for ( let i = 0 ; i < welcome_input_boxes_array.length ; i++ ){
+    for (let i = 0; i < welcome_input_boxes_array.length; i++) {
         results_place_ids_array[i] = welcome_input_boxes_array[i].getPlace();
     }
 }
 
 // function to dispaly the map on button press
-function welcome_show_map() {
+function welcome_show_map(who) {
+    welcome_which_map = who;
     document.getElementById("google_map").style.zIndex = '100';
 }
