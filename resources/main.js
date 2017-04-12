@@ -8,7 +8,6 @@ var infoButtons = "<br><p>is this the correct place?<p><br>\
     // array to hold all of our transport buttons
     results_transport_buttons_array,
     // array for the place_id's that were selected
-    results_place_ids_array = [],
     results_location_array = [],
     welcome_markers = null;
 
@@ -80,40 +79,39 @@ function build_map() {
         mapTypeId: google.maps.MapTypeId.TERRAIN
     };
     var geocoder = new google.maps.Geocoder,
-        infowindow = new google.maps.InfoWindow,
+        welcome_info_window = new google.maps.InfoWindow,
         // make the google map
         map = new google.maps.Map(document.getElementById("google_map"), map_options);
     google.maps.event.addListener(map, 'click', function (event) {
         if (welcome_markers) welcome_markers.setMap(null);
-        geocodeLatLng(geocoder, map, infowindow, event.latLng);
+        geocodeLatLng(geocoder, map, welcome_info_window, event.latLng);
     });
 }
 
-function geocodeLatLng(geocoder, map, infowindow, location) {
+function geocodeLatLng(geocoder, map, welcome_info_window, location) {
     geocoder.geocode({ 'location': location }, function (results, status) {
-        var marker = new google.maps.Marker({
+        var welcome_markers = new google.maps.Marker({
             position: location,
             map: map
         });
-        welcome_markers = marker;
         if (status === 'OK') {
-            infowindow.setContent(results[0].formatted_address + infoButtons);
-            infowindow.open(map, marker);
-            var btns = document.getElementsByClassName('welcome_info_button');
-            for (let i = 0; i < btns.length; i++) {
-                btns[i].addEventListener('click', function () {
-                    if (btns[i].id === 'yes') welcome_info_button_press(btns[i], marker, infowindow, results[1].formatted_address);
+            welcome_info_window.setContent(results[0].formatted_address + infoButtons);
+            welcome_info_window.open(map, welcome_markers);
+            var welcome_info_buttons = document.getElementsByClassName('welcome_info_button');
+            for (let i = 0; i < welcome_info_buttons.length; i++) {
+                welcome_info_buttons[i].addEventListener('click', function () {
+                    if (welcome_info_buttons[i].id === 'yes') welcome_info_button_press(welcome_info_buttons[i], welcome_markers, welcome_info_window, results[1].formatted_address);
                     welcome_markers.setMap(null);
                 });
             }
-        } else if (status === 'OVER_QUERY_LIMIT') infowindow.setContent('<h2>slow down!</h2><h4>too many requests</h4>');
-        else if (status === 'ZERO_RESULTS') infowindow.setContent('<h3>sorry no results found!</h3><h1>:(</h1>');
-        else infowindow.setContent('<h3>something has gone terribly wrong</h3>');
-        infowindow.open(map, marker);
+        } else if (status === 'OVER_QUERY_LIMIT') welcome_info_window.setContent('<h2>slow down!</h2><h4>too many requests</h4>');
+        else if (status === 'ZERO_RESULTS') welcome_info_window.setContent('<h3>sorry no results found!</h3><h1>:(</h1>');
+        else welcome_info_window.setContent('<h3>something has gone terribly wrong</h3>');
+        welcome_info_window.open(map, welcome_markers);
     });
 }
 
-function welcome_info_button_press(btn, marker, info, loc) {
+function welcome_info_button_press(btn, welcome_markers, info, loc) {
     if (welcome_which_map == 'start') {
         welcome_input_boxes_arraya[0].value = '' + loc;
         results_location_array[0] = loc;
@@ -148,7 +146,8 @@ function welcome_load() {
 // function to get the inputs from the buttons
 function welcome_inputs_selected() {
     for (let i = 0; i < welcome_input_boxes_array.length; i++) {
-        results_place_ids_array[i] = welcome_input_boxes_array[i].getPlace();
+        if (results_location_array[i])
+            results_location_array[i] = welcome_input_boxes_array[i].getPlace();
     }
 }
 
