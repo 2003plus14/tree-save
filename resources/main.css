@@ -56,7 +56,6 @@ html, body {
 }
 
 /* ********** welcome page ********** */
-
 /* set the welcome page background*/
 .welcome_background:before {
     content: "";
@@ -78,6 +77,9 @@ html, body {
 .welcome_logo {
     width: 60%;
     margin: 1em auto 0 auto;
+    border-radius: 50%; 
+    box-shadow: black 0 0 4px;
+    background: rgba(0, 0, 0, 0.75);
 }
 
 /* sizing & styling the welcome box which (mobile) */
@@ -113,6 +115,7 @@ html, body {
 
 /* placement of the map button*/
 .welcome_box .welcome_button {
+    margin: 0 20px 0 0;
     float: right;
 }
 
@@ -134,7 +137,7 @@ html, body {
 .welcome_box .welcome_box_input_group .welcome_box_input_box {
     background: transparent;
     font-size: 16px;
-    padding: 10px 10px 10px 5px;
+    padding: 10px 0 10px 5px;
     display: block;
     border: none;
     border-bottom: 1px solid #E8F5E9;
