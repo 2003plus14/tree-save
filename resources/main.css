@@ -224,6 +224,7 @@ html, body {
     position: absolute;
     top: 2.5vh;
     left: 2.5vw;
+    display: none;
     z-index: -2;
     background: white;
     box-shadow: black 0 0 10px;
@@ -312,7 +313,7 @@ html, body {
     /* reduce the scaling effect of the logo */
     .welcome_logo {
         margin: 2% auto 0 auto;
-        width: 20%;
+        width: 15%;
     }
     /* make the box abit smaller */
     .welcome_box {
