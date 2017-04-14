@@ -25,7 +25,7 @@
         </p>
         <form class='welcome_inputs_container' >
             <div class='welcome_box_input_group'>
-                <button class='button button_clean welcome_button' onclick='welcome_show_map("start")'>
+                <button type="button" class='button button_clean welcome_button' onclick='welcome_show_map("start")'>
                     <i class='fa fa-map fa-2x' aria-hidden='true'></i>
                 </button>
                 <input class='welcome_box_input_box' placeholder='' type='text' autofocus  autocomplete="On" required>
@@ -33,15 +33,15 @@
                 <label class='welcome_box_input_label'>start</label>
             </div>
             <div class='welcome_box_input_group'>
-                <button class='button button_clean welcome_button' onclick='welcome_show_map("destination")'>
+                <button type="button" class='button button_clean welcome_button' onclick='welcome_show_map("destination")'>
                     <i class='fa fa-map fa-2x' aria-hidden='true'></i>
                 </button>
                 <input class='welcome_box_input_box' placeholder='' type='text' autocomplete="On" required>
                 <span class='welcome_box_input_bar'></span>
                 <label class='welcome_box_input_label'>destination</label>
             </div>
-            <button class='button button_circle' onclick='welcome_inputs_selected()'>
-                <!--<input type='submit' style='display:none;' onclick='welcome_inputs_selected()' value=''>-->
+            <button class='button button_circle' >
+                <input type='submit' style='display:none;' onclick='welcome_inputs_selected()' value=''>
                 <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
             </button>
         </form>
