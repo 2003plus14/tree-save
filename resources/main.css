@@ -319,7 +319,7 @@ html, body {
     }
     /* reduce the width of the input box*/
     .welcome_box .welcome_box_input_group .welcome_box_input_box {
-        width: 97.8%;
+        width: 78%;
     }
     /* placement of the group of buttons*/
 }
