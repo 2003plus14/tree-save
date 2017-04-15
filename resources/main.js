@@ -176,7 +176,7 @@ function welcome_load() {
     // iterate through the array of input boxes
     for (let i = 0; i < welcome_input_boxes_arraya.length; i++)
         // at each add the autocomplete api with the cities constraint 
-        welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(welcome_input_boxes_arraya[i], { types: ['(cities)'] });
+        welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(welcome_input_boxes_arraya[i], { types: ['(cities)'], placeIdOnly: true });
 }
 
 // function to get the inputs from the buttons
@@ -188,6 +188,7 @@ function welcome_inputs_selected() {
             // then add the location from the input box
             results_location_array[i] = welcome_input_boxes_array[i].getPlace();
     }
+    hi();
 }
 
 // function to dispaly the map on button press
@@ -196,4 +197,37 @@ function welcome_show_map(who) {
     welcome_which_map = who;
     // show our map (this is a temporary way of doing this i promise)
     document.getElementById("google_map").style.zIndex = '100';
+}
+
+// function to handle callback from distance api
+function callback(response, status) {
+    console.log(response);
+    console.log(status);
+    if (status == 'OK') {
+        var origins = response.originAddresses;
+        var destinations = response.destinationAddresses;
+
+        for (var i = 0; i < origins.length; i++) {
+            var results = response.rows[i].elements;
+            for (var j = 0; j < results.length; j++) {
+                var element = results[j];
+                var distance = element.distance.text;
+                var duration = element.duration.text;
+                var from = origins[i];
+                var to = destinations[j];
+                alert(from + "\n" + to + "\n" + distance + "\n" + duration + "\n" + status);
+            }
+        }
+    }
+}
+
+function hi() {
+    var service = new google.maps.DistanceMatrixService();
+    console.log(welcome_input_boxes_array[0].getPlace().place_id);
+    service.getDistanceMatrix(
+        {
+            origins: [{'placeId': welcome_input_boxes_array[0].getPlace().place_id}],
+            destinations: [{'placeId': welcome_input_boxes_array[1].getPlace().place_id}],
+            travelMode: 'DRIVING'
+        }, callback);
 }
