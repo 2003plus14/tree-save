@@ -181,14 +181,11 @@ function welcome_load() {
 
 // function to get the inputs from the buttons
 function welcome_inputs_selected() {
-    // iterate through our array of buttons we made earlier
-    for (let i = 0; i < welcome_input_boxes_array.length; i++) {
-        // if the contents of the array has not already been filled from the map
-        if (results_location_array[i])
-            // then add the location from the input box
-            results_location_array[i] = welcome_input_boxes_array[i].getPlace();
-    }
-    hi();
+    new google.maps.DistanceMatrixService().getDistanceMatrix({
+        origins: [{'placeId': welcome_input_boxes_array[0].getPlace().place_id}],
+        destinations: [{'placeId': welcome_input_boxes_array[1].getPlace().place_id}],
+        travelMode: 'DRIVING'
+    }, callback);
 }
 
 // function to dispaly the map on button press
@@ -201,8 +198,6 @@ function welcome_show_map(who) {
 
 // function to handle callback from distance api
 function callback(response, status) {
-    console.log(response);
-    console.log(status);
     if (status == 'OK') {
         var origins = response.originAddresses;
         var destinations = response.destinationAddresses;
@@ -219,15 +214,4 @@ function callback(response, status) {
             }
         }
     }
-}
-
-function hi() {
-    var service = new google.maps.DistanceMatrixService();
-    console.log(welcome_input_boxes_array[0].getPlace().place_id);
-    service.getDistanceMatrix(
-        {
-            origins: [{'placeId': welcome_input_boxes_array[0].getPlace().place_id}],
-            destinations: [{'placeId': welcome_input_boxes_array[1].getPlace().place_id}],
-            travelMode: 'DRIVING'
-        }, callback);
 }
