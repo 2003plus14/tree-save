@@ -11,65 +11,8 @@ var welcome_input_boxes_arraya,
     // array for the locations that were selected
     results_location_array = [];
 
-// generate the array of buttons and add click events to each of them
-function generate_array() {
-    // populate the array with the button elements from the page
-    results_transport_buttons_array = document.getElementsByClassName("results_transport_buttons");
-    // iterate through the array we just made
-    for (let i = 0; i < results_transport_buttons_array.length; i++) {
-        // Add a listener for our transport buttons
-        results_transport_buttons_array[i].addEventListener("click", function () {
-            // reset the css of all the buttons
-            results_button_pressed();
-            // set the button that was clicked to the big style
-            results_button_size(this, 'big');
-            // if the button to the right of the button clicked exists then set it to the middle size
-            if (i + 1 < results_transport_buttons_array.length) results_button_size(results_transport_buttons_array[i + 1], 'middle');
-            // if the button to the left of the button clicked exists then set it to the middle sizes
-            if (~(i - 1)) results_button_size(results_transport_buttons_array[i - 1], 'middle');
-            // change the background
-            results_background_change(i);
-        });
-    }
-    // select the centre button (temp)
-    results_transport_buttons_array[2].click();
-}
-
-// function to clear the selected buttons
-function results_button_pressed() {
-    // iterate through the array of buttons 
-    for (let i = 0; i < results_transport_buttons_array.length; i++) {
-        // set the button at the current iteration to the standard css
-        results_transport_buttons_array[i].className = "results_transport_buttons button button_circle";
-    }
-}
-
-// function to set the class
-function results_button_size(element, type) {
-    // set the classname of the element to the class plus the type (big or middle)
-    element.className += ' results_transport_buttons_' + type;
-}
-
-// change the background dependant on the button press
-function results_background_change(i) {
-    // array to tell whether the button is good or bad (temporary)
-    var results_transport_buttons_array_type = [false, true, true, false, false];
-    // if the button is good at i
-    if (results_transport_buttons_array_type[i]) {
-        // set the background
-        document.body.style.backgroundImage = "url('resources/img/backgroundGood.png')";
-        // set the fallback background incase the image fails
-        document.body.style.backgroundColor = "#053201";
-    } else {
-        // set the background
-        document.body.style.backgroundImage = "url('resources/img/backgroundBad.png')";
-        // set the fallback background incase the image fails
-        document.body.style.backgroundColor = "#484848";
-    }
-}
-
 // function to set the options then draw the map
-function build_map() {
+function welcome_build_map() {
     // set the configuration of the google map
     var map_options = {
         // set the cneter latitude and longitude
@@ -105,7 +48,7 @@ function welcome_geocode_location(geocoder, map, welcome_info_window, location) 
             // set the map to our map
             map: map
         });
-        // if the geocoding returns successfully 
+        // if the geocoding returns successfully
         if (status === 'OK') {
             // set the contents of our info window to the address
             welcome_info_window.setContent(results[0].formatted_address +
@@ -157,25 +100,13 @@ function welcome_info_button_press(btn, welcome_marker, info, loc) {
     document.getElementById("google_map").style.zIndex = '-2';
 }
 
-// function to 'open' the sidebar
-function openNav() {
-    // set the sidebars width to 250px, making it appear
-    document.getElementById("results_bar").style.width = "250px";
-}
-
-//function to 'close' the sidebar
-function closeNav() {
-    // set the sidebars width to 0, make it slide away
-    document.getElementById("results_bar").style.width = "0";
-}
-
 // function to make the input boxes to integrate with places api
 function welcome_load() {
     // fill our array of input boxes
     welcome_input_boxes_arraya = document.getElementsByClassName('welcome_box_input_box');
     // iterate through the array of input boxes
     for (let i = 0; i < welcome_input_boxes_arraya.length; i++)
-        // at each add the autocomplete api with the cities constraint 
+        // at each add the autocomplete api with the cities constraint
         welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(welcome_input_boxes_arraya[i], { types: ['(cities)'], placeIdOnly: true });
 }
 
@@ -214,4 +145,75 @@ function callback(response, status) {
             }
         }
     }
+}
+
+// *** functions pertaining to the results page
+
+// generate the array of buttons and add click events to each of them
+function results_generate_array() {
+    // populate the array with the button elements from the page
+    results_transport_buttons_array = document.getElementsByClassName("results_transport_buttons");
+    // iterate through the array we just filled
+    for (let i = 0; i < results_transport_buttons_array.length; i++) {
+        // Add a listener for our transport buttons
+        results_transport_buttons_array[i].addEventListener("click", function () {
+            // reset the css of all the buttons
+            results_button_pressed();
+            // set the button that was clicked to the big style
+            results_button_size(this, 'big');
+            // if the button to the right of the button clicked exists then set it to the middle size
+            if (i + 1 < results_transport_buttons_array.length) results_button_size(results_transport_buttons_array[i + 1], 'middle');
+            // if the button to the left of the button clicked exists then set it to the middle sizes
+            if (~(i - 1)) results_button_size(results_transport_buttons_array[i - 1], 'middle');
+            // change the background
+            results_background_change(i);
+        });
+    }
+    // select the centre button (temp)
+    results_transport_buttons_array[2].click();
+}
+
+// function to clear the selected buttons
+function results_button_pressed() {
+    // iterate through the array of buttons
+    for (let i = 0; i < results_transport_buttons_array.length; i++) {
+        // set the button at the current iteration to the standard css
+        results_transport_buttons_array[i].className = "results_transport_buttons button button_circle";
+    }
+}
+
+// function to set the class
+function results_button_size(element, type) {
+    // set the classname of the element to the class plus the type (big or middle)
+    element.className += ' results_transport_buttons_' + type;
+}
+
+// change the background dependant on the button press
+function results_background_change(i) {
+    // array to tell whether the button is good or bad (temporary)
+    var results_transport_buttons_array_type = [false, true, true, false, false];
+    // if the button is good at i
+    if (results_transport_buttons_array_type[i]) {
+        // set the background
+        document.body.style.backgroundImage = "url('resources/img/backgroundGood.png')";
+        // set the fallback background incase the image fails
+        document.body.style.backgroundColor = "#053201";
+    } else {
+        // set the background
+        document.body.style.backgroundImage = "url('resources/img/backgroundBad.png')";
+        // set the fallback background incase the image fails
+        document.body.style.backgroundColor = "#484848";
+    }
+}
+
+// function to 'open' the sidebar
+function openNav() {
+    // set the sidebars width to 250px, making it appear
+    document.getElementById("results_bar").style.width = "250px";
+}
+
+//function to 'close' the sidebar
+function closeNav() {
+    // set the sidebars width to 0, make it slide away
+    document.getElementById("results_bar").style.width = "0";
 }
