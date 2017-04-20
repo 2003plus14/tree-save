@@ -91,19 +91,20 @@ html, body {
 }
 
 /* style thee header text */
-.welcome_box .welcome_header_text {
+.welcome_header_text {
     color: #FAFAFA;
+    font-size: 30px;
     text-align: center;
     padding: 0.5em 0 0 0;
 }
 
 /* style the welcome info*/
-.welcome_box .welcome_header_blurb {
+.welcome_header_blurb {
     color: #FAFAFA;
     font-weight: 300;
     font-size: 13px;
     width: 70%;
-    margin: auto auto 2em auto;
+    margin: auto auto 1em auto;
 }
 
 /* placemeent of the input boxes*/
