@@ -241,6 +241,19 @@ html, body {
     box-shadow: black 0 0 10px;
 }
 
+.welcome_results_pane * {
+  margin: 0.5em auto;
+}
+
+.welcome_results_pane p {
+  display: inline;
+}
+
+.welcome_results_pane .bold {
+  font-style: oblique;
+  font-weight: bold;
+}
+
 /* ********** results page ********** */
 /* placement of the group of buttons*/
 .results_buttons_group {
@@ -335,7 +348,12 @@ html, body {
     .welcome_box .welcome_box_input_group .welcome_box_input_box {
         width: 78%;
     }
-    /* placement of the group of buttons*/
+    .welcome_results_pane {
+      width: 60vw;
+      height: 55vh;
+      top: 35vh;
+      left: 20vw;
+    }
 }
 
 @media only screen and (min-width: 600){

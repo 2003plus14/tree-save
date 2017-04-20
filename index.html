@@ -41,8 +41,7 @@
                 <label class='welcome_box_input_label'>destination</label>
             </div>
             <button type="button" class='button button_circle' onclick='welcome_inputs_selected()' >
-                <!--<input type='submit' style='display:none;' value=''>-->
-                <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
+              <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
             </button>
         </form>
     </div>
@@ -51,7 +50,14 @@
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places'></script>
     </div>
     <!-- container for the results pane -->
-    <div class='welcome_results_pane'>
+    <div class='welcome_results_pane' id='welcome_results_pane'>
+      <h1 class='welcome_results_pane_header'>title</h1>
+      <h6 class='welcome_results_pane_start'>from</h6><h3 id='from'>x</h3>
+      <h6 class='welcome_results_pane_start'>to</h6><h3 id='to'>y</h3><br>
+      <p class='text'> you will travel <p class='bold' id='distance'>1</p>
+        it will take <p class='bold' id='duration'>2</p><br>
+        this will cause <p class='bold' id='em'>1</p>x of emissions</p>
+      <br><p class='bold' id='congrats'><br><br>welldone!</p>
     </div>
 </body>
 
