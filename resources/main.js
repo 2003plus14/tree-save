@@ -24,6 +24,12 @@ function welcome_build_map() {
   var geocoder = new google.maps.Geocoder,
     // set the info window object that will be attached to the marker
     welcome_info_window = new google.maps.InfoWindow,
+    // instantiate a directions service
+    directionsService = new google.maps.DirectionsService,
+    // set the renderer for the directions
+    directionsDisplay = new google.maps.DirectionsRenderer({
+      map: map
+    }),
     // make the google map
     map = new google.maps.Map(
       document.getElementById("google_map"), map_options);
@@ -63,7 +69,7 @@ function welcome_geocode_location(
                 <button class='button welcome_info_button'\
                 id='no'>no</button>");
       // open info window on marker
-        //(this has to be here otherwise we cant access the buttons)
+      //(this has to be here otherwise we cant access the buttons)
       welcome_info_window.open(map, welcome_marker);
       // create an array of the two buttons on the info window we just made
       var welcome_info_buttons = document.getElementsByClassName(
@@ -155,17 +161,15 @@ function welcome_show_map(who) {
 // function to handle callback from distance api
 function callback(response, status) {
   if (status == 'OK') {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
-
-    for (var i = 0; i < origins.length; i++) {
-      var results = response.rows[i].elements;
-      for (var j = 0; j < results.length; j++) {
-        var element = results[j];
-        var distance = element.distance.text;
-        var duration = element.duration.text;
-        var from = origins[i];
-        var to = destinations[j];
+    var results = response.rows[0].elements;
+    for (var j = 0; j < results.length; j++) {
+      if (results[j].status == 'ZERO_RESULTS')
+        alert('Sorry we can only handle land routes at this time');
+      else {
+        var distance = results[j].distance.text;
+        var duration = results[j].duration.text;
+        var from = response.originAddresses[0];
+        var to = response.destinationAddresses[j];
         alert(from + "\n" + to + "\n" + distance +
           "\n" + duration + "\n" + status);
       }
