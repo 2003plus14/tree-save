@@ -166,12 +166,11 @@ function callback(response, status) {
       if (results[j].status == 'ZERO_RESULTS')
         alert('Sorry we can only handle land routes at this time');
       else {
-        var distance = results[j].distance.text;
-        var duration = results[j].duration.text;
-        var from = response.originAddresses[0];
-        var to = response.destinationAddresses[j];
-        alert(from + "\n" + to + "\n" + distance +
-          "\n" + duration + "\n" + status);
+        document.getElementById('distance').innerHTML = results[j].distance.text;
+        document.getElementById('duration').innerHTML = results[j].duration.text;
+        document.getElementById('from').innerHTML = response.originAddresses[0];
+        document.getElementById('to').innerHTML = response.destinationAddresses[j];
+        document.getElementById("welcome_results_pane").style.zIndex = '100';
       }
     }
   }

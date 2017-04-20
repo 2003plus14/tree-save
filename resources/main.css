@@ -77,7 +77,7 @@ html, body {
 .welcome_logo {
     width: 60%;
     margin: 1em auto 0 auto;
-    border-radius: 50%; 
+    border-radius: 50%;
     box-shadow: black 0 0 4px;
     background: rgba(0, 0, 0, 0.75);
 }
@@ -91,19 +91,20 @@ html, body {
 }
 
 /* style thee header text */
-.welcome_box .welcome_header_text {
+.welcome_header_text {
     color: #FAFAFA;
+    font-size: 30px;
     text-align: center;
     padding: 0.5em 0 0 0;
 }
 
 /* style the welcome info*/
-.welcome_box .welcome_header_blurb {
+.welcome_header_blurb {
     color: #FAFAFA;
     font-weight: 300;
     font-size: 13px;
     width: 70%;
-    margin: auto auto 2em auto;
+    margin: auto auto 1em auto;
 }
 
 /* placemeent of the input boxes*/
@@ -229,6 +230,30 @@ html, body {
     box-shadow: black 0 0 10px;
 }
 
+/* results pane styling */
+.welcome_results_pane {
+    width: 95vw;
+    height: 95vh;
+    position: absolute;
+    top: 2.5vh;
+    left: 2.5vw;
+    z-index: -2;
+    background: white;
+    box-shadow: black 0 0 10px;
+}
+
+.welcome_results_pane * {
+  margin: 0.5em auto;
+}
+
+.welcome_results_pane p {
+  display: inline;
+}
+
+.welcome_results_pane .bold {
+  font-style: oblique;
+  font-weight: bold;
+}
 
 /* ********** results page ********** */
 /* placement of the group of buttons*/
@@ -324,7 +349,12 @@ html, body {
     .welcome_box .welcome_box_input_group .welcome_box_input_box {
         width: 78%;
     }
-    /* placement of the group of buttons*/
+    .welcome_results_pane {
+      width: 60vw;
+      height: 55vh;
+      top: 35vh;
+      left: 20vw;
+    }
 }
 
 @media only screen and (min-width: 600){
