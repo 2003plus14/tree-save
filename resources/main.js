@@ -173,14 +173,8 @@ function callback(response, status) {
   }
 }
 
-// function to 'open' the sidebar
-function openNav() {
-  // set the sidebars width to 250px, making it appear
-  document.getElementById("results_bar").style.width = "250px";
-}
-
-//function to 'close' the sidebar
-function closeNav() {
-  // set the sidebars width to 0, make it slide away
-  document.getElementById("results_bar").style.width = "0";
+// function to toggle the sidebar
+function toggleSidebar(x) {
+  document.getElementById("results_bar").style.width =
+    x == 'o' ? '250px' : '0';
 }

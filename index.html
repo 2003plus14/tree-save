@@ -19,12 +19,12 @@
 <body onload='welcome_load()' class='main welcome_background'>
   <!-- side bar -->
   <!-- button to open our sidebar-->
-  <button class='results_sidebar_open button button_clean' onclick='openNav()'>
+  <button class='results_sidebar_open button button_clean' onclick='toggleSidebar("o")'>
       <i class='fa fa-bars fa-2x' aria-hidden='true'></i>
   </button>
   <div id='results_bar' class='results_sidebar'>
       <!-- button to close the side bar -->
-      <button class='results_close_button button button_clean' onclick='closeNav()'>
+      <button class='results_close_button button button_clean' onclick='toggleSidebar("c")'>
           <i class='fa fa-times fa-2x' aria-hidden='true'></i>
       </button>
       <h2 class='welcome_header_text'>tree save</h2>
