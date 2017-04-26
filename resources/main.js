@@ -205,42 +205,6 @@ function results_generate_array() {
   results_transport_buttons_array[2].click();
 }
 
-// function to clear the selected buttons
-function results_button_pressed() {
-  // iterate through the array of buttons
-  for (let i = 0; i < results_transport_buttons_array.length; i++) {
-    // set the button at the current iteration to the standard css
-    results_transport_buttons_array[i].className =
-      "results_transport_buttons button button_circle";
-  }
-}
-
-// function to set the class
-function results_button_size(element, type) {
-  // set the classname of the element to the class plus the type (big / middle)
-  element.className += ' results_transport_buttons_' + type;
-}
-
-// change the background dependant on the button press
-function results_background_change(i) {
-  // array to tell whether the button is good or bad (temporary)
-  var results_transport_buttons_array_type = [false, true, true, false, false];
-  // if the button is good at i
-  if (results_transport_buttons_array_type[i]) {
-    // set the background
-    document.body.style.backgroundImage =
-      "url('resources/img/backgroundGood.png')";
-    // set the fallback background incase the image fails
-    document.body.style.backgroundColor = "#053201";
-  } else {
-    // set the background
-    document.body.style.backgroundImage =
-      "url('resources/img/backgroundBad.png')";
-    // set the fallback background incase the image fails
-    document.body.style.backgroundColor = "#484848";
-  }
-}
-
 // function to 'open' the sidebar
 function openNav() {
   // set the sidebars width to 250px, making it appear
