@@ -109,7 +109,7 @@ function welcome_info_button_press(btn, welcome_marker, info, loc) {
   let i = (welcome_which_map == 'start') ? 0 : 1;
   //set the value of the input box to the location reverse geocode
   welcome_input_boxes_array[i].value = loc.formatted_address;
-  welcome_locations_array[i] = loc;
+  welcome_locations_array[i] = loc.place_id;
   // 'close' the map
   document.getElementById("google_map").style.zIndex = '-2';
 }
@@ -134,14 +134,12 @@ function welcome_load() {
 function welcome_inputs_selected() {
   new google.maps.DistanceMatrixService().getDistanceMatrix({
     origins: [{
-      'placeId': (welcome_locations_array[0] instanceof Object) ?
-        welcome_locations_array[0].place_id :
-        welcome_locations_array[0].getPlace().place_id
+      'placeId': welcome_locations_array[0] instanceof Object ?
+        welcome_locations_array[0].getPlace().place_id : welcome_locations_array[0]
     }],
     destinations: [{
-      'placeId': (welcome_locations_array[1] instanceof Object) ?
-        welcome_locations_array[1].place_id :
-        welcome_locations_array[1].getPlace().place_id
+      'placeId': welcome_locations_array[1] instanceof Object ?
+        welcome_locations_array[1].getPlace().place_id : welcome_locations_array[1]
     }],
     travelMode: 'DRIVING'
   }, callback);
