@@ -165,12 +165,18 @@ function callback(response, status) {
           response.originAddresses[0];
         document.getElementById('to').innerHTML =
           response.destinationAddresses[j];
-        document.getElementById('distance').innerHTML =
+        document.getElementById('dist').innerHTML =
           results[j].distance.text;
+        document.getElementById('em').innerHTML =
+          getEm(results[j].distance.value/1000);
         document.getElementById("welcome_results_pane").style.zIndex = '100';
       }
     }
   }
+}
+
+function getEm(d){
+  return d*0.00012;
 }
 
 // function to toggle the sidebar
