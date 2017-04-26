@@ -60,12 +60,12 @@ html, body {
 .welcome_background:before {
     content: "";
     position: fixed;
-    left: -5px;
-    right: -5px;
+    left: -1vw;
+    top: -1vh;
     z-index: -1;
     background: url('img/background.jpg');
-    width: 102%;
-    height: 102%;
+    width: 102vw;
+    height: 102vh;
     -webkit-filter: blur(3px);
     -moz-filter: blur(3px);
     -o-filter: blur(3px);
