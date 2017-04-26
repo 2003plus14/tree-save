@@ -1,15 +1,10 @@
-// array to hold our two input boxes
-var welcome_input_boxes_arraya,
+var
   // global tracker for determining which box to add the selected location to
   welcome_which_map,
   // global tracker for the marker
   welcome_marker = null,
   // array to hold all of our location selection boxes
-  welcome_input_boxes_array = [],
-  // array to hold all of our transport buttons
-  results_transport_buttons_array,
-  // array for the locations that were selected
-  results_location_array = [];
+  welcome_input_boxes_array = [];
 
 // function to set the options then draw the map
 function welcome_build_map() {
@@ -49,15 +44,15 @@ function welcome_geocode_location(
   geocoder.geocode({
     'location': location
   }, function(results, status) {
-    // make our marker
-    welcome_marker = new google.maps.Marker({
-      // set the position to the location clicked
-      position: location,
-      // set the map to our map
-      map: map
-    });
     // if the geocoding returns successfully
     if (status === 'OK') {
+      // make our marker
+      welcome_marker = new google.maps.Marker({
+        // set the position to the location clicked
+        position: location,
+        // set the map to our map
+        map: map
+      });
       // set the contents of our info window to the address
       welcome_info_window.setContent(
         // add some text and two buttons for choosing
@@ -106,17 +101,13 @@ function welcome_geocode_location(
   });
 }
 
-// function to set the contents of input boxes and hide map when we finished
+// function to set the contents of input boxes and hide map
 function welcome_info_button_press(btn, welcome_marker, info, loc) {
-  // if the map was opened from the start box
-  if (welcome_which_map == 'start') {
-    // set the value of the input box to the location reverse geocode
-    welcome_input_boxes_arraya[0].value = loc;
-    // else if the map was opened from the destination box
-  } else {
-    // set the value of the input box to the location reverse geocode
-    welcome_input_boxes_arraya[1].value = loc;
-  }
+  // if the map was opened from the start box,
+    //set the value of the input box to the location reverse geocode
+  if (welcome_which_map == 'start') welcome_input_boxes_array[0].value = loc;
+  // else set the value of the input box to the location reverse geocode
+  else welcome_input_boxes_array[1].value = loc;
   // 'close' the map
   document.getElementById("google_map").style.zIndex = '-2';
 }
@@ -124,13 +115,13 @@ function welcome_info_button_press(btn, welcome_marker, info, loc) {
 // function to make the input boxes to integrate with places api
 function welcome_load() {
   // fill our array of input boxes
-  welcome_input_boxes_arraya =
+  welcome_input_boxes_array =
     document.getElementsByClassName('welcome_box_input_box');
   // iterate through the array of input boxes
-  for (let i = 0; i < welcome_input_boxes_arraya.length; i++)
+  for (let i = 0; i < welcome_input_boxes_array.length; i++)
     // at each add the autocomplete api with the cities constraint
     welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(
-      welcome_input_boxes_arraya[i], {
+      welcome_input_boxes_array[i], {
         types: ['(cities)'],
         placeIdOnly: true
       });
@@ -174,35 +165,6 @@ function callback(response, status) {
       }
     }
   }
-}
-
-// *** functions pertaining to the results page
-
-// generate the array of buttons and add click events to each of them
-function results_generate_array() {
-  // populate the array with the button elements from the page
-  results_transport_buttons_array = document.getElementsByClassName(
-    "results_transport_buttons");
-  // iterate through the array we just filled
-  for (let i = 0; i < results_transport_buttons_array.length; i++) {
-    // Add a listener for our transport buttons
-    results_transport_buttons_array[i].addEventListener("click", function() {
-      // reset the css of all the buttons
-      results_button_pressed();
-      // set the button that was clicked to the big style
-      results_button_size(this, 'big');
-      // if the button right of button clicked exists then set to middle size
-      if (i + 1 < results_transport_buttons_array.length)
-        results_button_size(results_transport_buttons_array[i + 1], 'middle');
-      // if the button left of button clicked exists then set to middle size
-      if (~(i - 1))
-        results_button_size(results_transport_buttons_array[i - 1], 'middle');
-      // change the background
-      results_background_change(i);
-    });
-  }
-  // select the centre button (temp)
-  results_transport_buttons_array[2].click();
 }
 
 // function to 'open' the sidebar
