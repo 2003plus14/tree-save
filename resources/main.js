@@ -4,7 +4,9 @@ var
   // global tracker for the marker
   welcome_marker = null,
   // array to hold all of our location selection boxes
-  welcome_input_boxes_array = [];
+  welcome_input_boxes_array = [],
+  // array for the locatiosn
+  welcome_locations_array = [];
 
 // function to set the options then draw the map
 function welcome_build_map() {
@@ -79,7 +81,7 @@ function welcome_geocode_location(
               welcome_info_buttons[i],
               welcome_marker,
               welcome_info_window,
-              results[1].formatted_address
+              results[0]
             );
           // then remove the marker
           welcome_marker.setMap(null);
@@ -103,11 +105,11 @@ function welcome_geocode_location(
 
 // function to set the contents of input boxes and hide map
 function welcome_info_button_press(btn, welcome_marker, info, loc) {
-  // if the map was opened from the start box,
-    //set the value of the input box to the location reverse geocode
-  if (welcome_which_map == 'start') welcome_input_boxes_array[0].value = loc;
-  // else set the value of the input box to the location reverse geocode
-  else welcome_input_boxes_array[1].value = loc;
+  // determine where the map was opened from
+  let i = (welcome_which_map == 'start') ? 0 : 1;
+  //set the value of the input box to the location reverse geocode
+  welcome_input_boxes_array[i].value = loc.formatted_address;
+  welcome_locations_array[i] = loc;
   // 'close' the map
   document.getElementById("google_map").style.zIndex = '-2';
 }
@@ -120,7 +122,7 @@ function welcome_load() {
   // iterate through the array of input boxes
   for (let i = 0; i < welcome_input_boxes_array.length; i++)
     // at each add the autocomplete api with the cities constraint
-    welcome_input_boxes_array[i] = new google.maps.places.Autocomplete(
+    welcome_locations_array[i] = new google.maps.places.Autocomplete(
       welcome_input_boxes_array[i], {
         types: ['(cities)'],
         placeIdOnly: true
@@ -130,12 +132,17 @@ function welcome_load() {
 
 // function to get the inputs from the buttons
 function welcome_inputs_selected() {
+  console.log(welcome_locations_array);
   new google.maps.DistanceMatrixService().getDistanceMatrix({
     origins: [{
-      'placeId': welcome_input_boxes_array[0].getPlace().place_id
+      'placeId': (welcome_locations_array[0] instanceof Object) ?
+        welcome_locations_array[0].place_id :
+        welcome_locations_array[0].getPlace().place_id
     }],
     destinations: [{
-      'placeId': welcome_input_boxes_array[1].getPlace().place_id
+      'placeId': (welcome_locations_array[1] instanceof Object) ?
+        welcome_locations_array[1].place_id :
+        welcome_locations_array[1].getPlace().place_id
     }],
     travelMode: 'DRIVING'
   }, callback);
