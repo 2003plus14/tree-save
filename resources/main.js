@@ -132,7 +132,6 @@ function welcome_load() {
 
 // function to get the inputs from the buttons
 function welcome_inputs_selected() {
-  console.log(welcome_locations_array);
   new google.maps.DistanceMatrixService().getDistanceMatrix({
     origins: [{
       'placeId': (welcome_locations_array[0] instanceof Object) ?
@@ -164,10 +163,12 @@ function callback(response, status) {
       if (results[j].status == 'ZERO_RESULTS')
         alert('Sorry we can only handle land routes at this time');
       else {
-        document.getElementById('distance').innerHTML = results[j].distance.text;
-        document.getElementById('duration').innerHTML = results[j].duration.text;
-        document.getElementById('from').innerHTML = response.originAddresses[0];
-        document.getElementById('to').innerHTML = response.destinationAddresses[j];
+        document.getElementById('from').innerHTML =
+          response.originAddresses[0];
+        document.getElementById('to').innerHTML =
+          response.destinationAddresses[j];
+        document.getElementById('distance').innerHTML =
+          results[j].distance.text;
         document.getElementById("welcome_results_pane").style.zIndex = '100';
       }
     }
