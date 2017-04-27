@@ -159,25 +159,41 @@ function callback(response, status) {
       if (results[j].status == 'ZERO_RESULTS')
         alert('Sorry we can only handle land routes at this time');
       else {
-        document.getElementById('from').innerHTML =
-          response.originAddresses[0];
-        document.getElementById('to').innerHTML =
-          response.destinationAddresses[j];
-        document.getElementById('dist').innerHTML =
-          results[j].distance.text;
-        document.getElementById('em').innerHTML =
-          getEm(results[j].distance);
-        document.getElementById("welcome_results_pane").style.zIndex = '100';
+        buildResult(
+          response.originAddresses[0],
+          response.destinationAddresses[j],
+          results[j].distance);
       }
     }
   }
+}
+
+function buildResult(f,t,d){
+  let e = getEm(d),
+      tr = treeSave(e),
+      out = '';
+  for (let i = 0; i < tr; i++) out += 'tree ';
+  document.getElementById('from').innerHTML = f;
+  document.getElementById('to').innerHTML = t;
+  document.getElementById('dist').innerHTML = d.text;
+  document.getElementById('em').innerHTML = e;
+  document.getElementById('tree').innerHTML = out;
+  document.getElementById('year').innerHTML = tr;
+  document.getElementById("welcome_results_pane").style.zIndex = '100';
 }
 
 // function to return the emissions based on the distance
 function getEm(d){
   // as a temporary measure just using data from the epa to return
   //  an estimated value
-  return d.value/1000*0.00012;
+  return d.value/1000*(0.008887/96.5606);
+}
+
+// function to return the trees saved based on the emissions
+function treeSave(e){
+  // as a temporary measure just using data from the epa to return
+  //  an estimated value
+  return e*0.003859;
 }
 
 // function to toggle the sidebar
