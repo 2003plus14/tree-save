@@ -133,11 +133,13 @@ function welcome_inputs_selected() {
   new google.maps.DistanceMatrixService().getDistanceMatrix({
     origins: [{
       'placeId': welcome_locations_array[0] instanceof Object ?
-        welcome_locations_array[0].getPlace().place_id : welcome_locations_array[0]
+        welcome_locations_array[0].getPlace().place_id :
+        welcome_locations_array[0]
     }],
     destinations: [{
       'placeId': welcome_locations_array[1] instanceof Object ?
-        welcome_locations_array[1].getPlace().place_id : welcome_locations_array[1]
+        welcome_locations_array[1].getPlace().place_id :
+        welcome_locations_array[1]
     }],
     travelMode: 'DRIVING'
   }, callback);
@@ -169,17 +171,28 @@ function callback(response, status) {
 }
 
 function buildResult(f,t,d){
+      // get the emissions
   let e = getEm(d),
-      tr = treeSave(e),
-      tree = '<img class="tree" src="resources/img/tree.png"/>',
-      out = '';
-  for (let i = 0; i < tr; i++) out += tree;
-  document.getElementById('from').innerHTML = f;
-  document.getElementById('to').innerHTML = t;
-  document.getElementById('dist').innerHTML = d.text;
-  document.getElementById('em').innerHTML = e;
-  document.getElementById('tree').innerHTML = out;
-  document.getElementById('year').innerHTML = (Math.ceil((tr*10000))/10000);
+      // get the trees required
+      s = treeSave(e),
+      // set the html to add trees
+      x = '<img class="tree" src="resources/img/tree.png"/>',
+      // set the output string
+      o = '',
+      // set the time
+      m = (Math.ceil((s*10000))/10000);
+      // set the distance to the text version
+      d = d.text;
+  // loop through while i is less than the number of trees required,
+    // add a tree to the output
+  for (let i = 0; i < s; i++) o += x;
+      // build array with the strings
+  let it = [f, t, d, e, o, m],
+      // and with the elements to set
+      el = document.getElementsByClassName('bold');
+  // loop through the array of elements setting it to our strings
+  for (let i = 0; i < el.length; i++) el[i].innerHTML = it[i];
+  // show the map
   document.getElementById("welcome_results_pane").style.zIndex = '100';
 }
 
