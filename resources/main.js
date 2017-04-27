@@ -214,6 +214,10 @@ function treeSave(e,r){
   return Math.ceil(e/((0.003859/365/24/60)*r.value));
 }
 
+function hidePane(){
+  document.getElementById("welcome_results_pane").style.zIndex = '-2';
+}
+
 // function to toggle the sidebar
 function toggleSidebar(x) {
   document.getElementById("results_bar").style.width =

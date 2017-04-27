@@ -236,6 +236,13 @@ html, body {
     z-index: -2;
 }
 
+.welcome_results_pane .close_pane{
+  position: absolute;
+  right: 1em;
+  top: 0.1em;
+}
+
+
 .welcome_results_pane * {
   margin: 0.5em auto;
 }
