@@ -175,7 +175,7 @@ function buildResult(f,t,r,d){
       // get the emissions
   let e = getEm(d),
       // get the trees required
-      s = treeSave(e),
+      s = treeSave(e,r),
       // set the html to add trees
       x = '<img class="tree" src="resources/img/tree.png"/>',
       // set the output string
@@ -203,15 +203,15 @@ function buildResult(f,t,r,d){
 function getEm(d){
   // as a temporary measure just using data from the epa to return
   //  an estimated value
-  // rounded((distance(m)/100)*(co2 per uk gallon/average mpg) * 100) / 100
-  return Math.round((((d.value/1000)*(0.0155/60)) + 0.00001) * 100) / 100;
+  // rounded((distance(m)/1000)*(co2 per uk gallon/average mpg) * 100) / 100
+  return Math.round((((d.value/1000)*(0.0155/60))+0.00001)*100)/100;
 }
 
 // function to return the trees saved based on the emissions
 function treeSave(e){
   // as a temporary measure just using data from the epa to return
   //  an estimated value
-  return e*0.003859;
+  return e/0.003859;
 }
 
 // function to toggle the sidebar
