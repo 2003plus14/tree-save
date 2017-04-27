@@ -1,237 +1,296 @@
 /* main styling */
+
+
 /* boilerplate*/
+
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
+
 
 /* main background and alignment */
+
 .main {
-    background: grey no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
+  background: grey no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
 }
+
 
 /* button styling*/
+
+
 /* our shared style*/
+
 .button {
-    border: none;
-    margin: 1em auto;
+  border: none;
+  margin: 1em auto;
 }
+
 
 /* button hover effects */
+
 .button:hover {
-    background: #9E9E9E;
+  background: #9E9E9E;
 }
+
 
 /* remove the standard hover effect for both buttons*/
+
 .button:focus {
-    outline: none;
+  outline: none;
 }
+
 
 /* the circle button style */
+
 .button_circle {
-    width: 60px;
-    height: 60px;
-    color: #424242;
-    background: #E0E0E0;
-    border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: #424242;
+  background: #E0E0E0;
+  border-radius: 50%;
 }
+
 
 /* button style with nobackground */
+
 .button_clean {
-    background: transparent;
-    color: #FAFAFA;
-    float: right;
+  background: transparent;
+  color: #FAFAFA;
+  float: right;
 }
+
 
 /* ********** welcome page ********** */
+
+
 /* set the welcome page background*/
+
 .welcome_background:before {
-    content: "";
-    position: fixed;
-    left: -1vw;
-    top: -1vh;
-    z-index: -1;
-    background: url('img/background.jpg');
-    width: 102vw;
-    height: 102vh;
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);
+  content: "";
+  position: fixed;
+  left: -1vw;
+  top: -1vh;
+  z-index: -1;
+  background: url('img/background.jpg');
+  width: 102vw;
+  height: 102vh;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
 }
+
 
 /* sizing the welcome page logo (mobile) */
+
 .welcome_logo {
-    width: 60%;
-    margin: 1em auto 0 auto;
-    border-radius: 50%;
-    box-shadow: black 0 0 4px;
-    background: rgba(0, 0, 0, 0.75);
+  width: 60%;
+  margin: 1em auto 0 auto;
+  border-radius: 50%;
+  box-shadow: black 0 0 4px;
+  background: rgba(0, 0, 0, 0.75);
 }
+
 
 /* sizing & styling the welcome box which (mobile) */
+
 .welcome_box {
-    width: 91%;
-    margin: auto;
-    background: black;
-    background: rgba(0, 0, 0, 0.85);
-    box-shadow: black 0 0 10px;
+  width: 91%;
+  margin: auto;
+  background: black;
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: black 0 0 10px;
 }
+
 
 /* style thee header text */
+
 .welcome_header_text {
-    color: #FAFAFA;
-    font-size: 30px;
-    text-align: center;
-    padding: 0.5em 0 0 0;
+  color: #FAFAFA;
+  font-size: 30px;
+  text-align: center;
+  padding: 0.5em 0 0 0;
 }
+
 
 /* style the welcome info*/
+
 .welcome_header_blurb {
-    color: #FAFAFA;
-    font-weight: 300;
-    font-size: 13px;
-    width: 70%;
-    margin: auto auto 1em auto;
+  color: #FAFAFA;
+  font-weight: 300;
+  font-size: 13px;
+  width: 70%;
+  margin: auto auto 1em auto;
 }
+
 
 /* placemeent of the input boxes*/
+
 .welcome_box .welcome_inputs_container {
-    display: inline;
-    text-align: center;
-    margin: 0;
+  display: inline;
+  text-align: center;
+  margin: 0;
 }
 
+
 /* placement of the map button*/
+
 .welcome_box .welcome_button {
-    margin: 0 20px 0 0;
-    float: right;
+  margin: 0 20px 0 0;
+  float: right;
 }
 
 
 /* input boxes styling */
+
+
 /* placement for the individual input box ( which is made of three elements ) */
+
 .welcome_box .welcome_box_input_group {
-    width: 90%;
-    margin: auto;
-    position: relative;
+  width: 90%;
+  margin: auto;
+  position: relative;
 }
+
 
 /* space the two input box groups */
+
 .welcome_box_input_group:first-of-type+.welcome_box_input_group {
-    margin: 1.5em auto 1em auto;
+  margin: 1.5em auto 1em auto;
 }
+
 
 /* style the input element*/
+
 .welcome_box .welcome_box_input_group .welcome_box_input_box {
   width: 70%;
-    background: transparent;
-    font-size: 16px;
-    padding: 10px 0 10px 5px;
-    display: block;
-    border: none;
-    border-bottom: 1px solid #E8F5E9;
-    color: #E8F5E9;
+  background: transparent;
+  font-size: 16px;
+  padding: 10px 0 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #E8F5E9;
+  color: #E8F5E9;
 }
+
 
 /* remove the default on focous effect */
+
 .welcome_box .welcome_box_input_group .welcome_box_input_box:focus {
-    outline: none;
+  outline: none;
 }
+
 
 /* styling for the 'placeholder' text */
+
 .welcome_box .welcome_box_input_group .welcome_box_input_label {
-    color: #D8DEE9;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
-    -o-transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
+  color: #D8DEE9;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
+
 
 /* move the placeholder text above the input box */
-.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_label,
-.welcome_box .welcome_box_input_group .welcome_box_input_box:valid~.welcome_box_input_label {
-    top: -20px;
-    font-size: 14px;
-    color: #D8DEE9;
+
+.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_label, .welcome_box .welcome_box_input_group .welcome_box_input_box:valid~.welcome_box_input_label {
+  top: -20px;
+  font-size: 14px;
+  color: #D8DEE9;
 }
+
 
 /* place the line on the bottom of the input box */
+
 .welcome_box .welcome_box_input_group .welcome_box_input_bar {
-    position: relative;
-    display: block;
-    width: 81%;
+  position: relative;
+  display: block;
+  width: 81%;
 }
+
 
 /* style the bar on the bottom */
-.welcome_box .welcome_box_input_group .welcome_box_input_bar:before,
-.welcome_box .welcome_box_input_group .welcome_box_input_bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    background: #D8DEE9;
-    transition: 0.2s ease all;
-    -o-transition: 02s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
+
+.welcome_box .welcome_box_input_group .welcome_box_input_bar:before, .welcome_box .welcome_box_input_group .welcome_box_input_bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #D8DEE9;
+  transition: 0.2s ease all;
+  -o-transition: 02s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
+
 /* make the bar span the input after being selected */
+
 .welcome_box .welcome_box_input_group .welcome_box_input_bar:before, {
-    left: 50%;
+  left: 50%;
 }
 
+
 /* make the bar span the input after being selected */
+
 .welcome_box .welcome_box_input_group .welcome_box_input_bar:after {
-    right: 50%;
+  right: 50%;
 }
+
 
 /* set the width on being clicked*/
-.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_bar:before,
-.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_bar:after {
-    width: 50%;
+
+.welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_bar:before, .welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.welcome_box_input_bar:after {
+  width: 50%;
 }
+
 
 /* make the effect smooth instead of just popping in */
+
 .welcome_box .welcome_box_input_group .welcome_box_input_box:focus~.highlight {
-    -webkit-animation: inputHighlighter 0.3s ease;
-    -moz-animation: inputHighlighter 0.3s ease;
-    animation: inputHighlighter 0.3s ease;
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
 }
+
 
 /* google maps sizing*/
+
 .welcome_google_map {
-    width: 95vw;
-    height: 95vh;
-    position: absolute;
-    top: 2.5vh;
-    left: 2.5vw;
-    z-index: -2;
-    background: white;
-    box-shadow: black 0 0 10px;
+  width: 95vw;
+  height: 95vh;
+  position: absolute;
+  top: 2.5vh;
+  left: 2.5vw;
+  z-index: -2;
+  background: white;
+  box-shadow: black 0 0 10px;
 }
 
+
 /* results pane styling */
+
 .welcome_results_pane {
-    display: none;
-    padding-bottom: 2em;
+  display: none;
+  padding-bottom: 2em;
 }
 
 .welcome_results_pane .tree {
@@ -255,73 +314,91 @@ html, body {
   font-size: 125%;
 }
 
+
 /* sidebar properties */
+
+
 /* sizingg and styling the sidebar*/
+
 .results_sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.85);
-    overflow-x: hidden;
-    transition: 0.5s;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  overflow-x: hidden;
+  transition: 0.5s;
 }
+
 
 /* placement for the sidebar close button */
+
 .results_sidebar .results_close_button {
-    position: absolute;
-    margin: 10px 0;
+  position: absolute;
+  margin: 10px 0;
 }
+
 
 /* sizing for the logo in the side bar*/
+
 .results_sidebar .results_logo {
-    width: 80%;
-    margin: 0 0 2em 0;
+  width: 80%;
+  margin: 0 0 2em 0;
 }
+
 
 /* open sidebar button */
+
+
 /* placement of the button to open the sidebar*/
+
 .results_sidebar_open {
-    position: absolute;
-    top: 5;
-    left: 1%;
+  position: absolute;
+  top: 5;
+  left: 1%;
 }
+
 
 /* temp info pane styling*/
+
 .results_info_pane {
-    color: white;
-    margin: 0 3%;
-    border: 2px solid white;
-    padding: 2em;
-    background-color: green;
-    box-shadow: 0 0 1em #212121;
+  color: white;
+  margin: 0 3%;
+  border: 2px solid white;
+  padding: 2em;
+  background-color: green;
+  box-shadow: 0 0 1em #212121;
 }
+
 
 /* ********** desktop specific stuff ********** */
+
+
 /* specific style for the desktop view */
+
 @media only screen and (min-width: 500px) {
-    /* reduce the scaling effect of the logo */
-    .welcome_logo {
-        margin: 2% auto 0 auto;
-        width: 15%;
-    }
-    /* make the box abit smaller */
-    .welcome_box {
-        margin: auto auto 80% auto;
-        width: 50%;
-        border-radius: 3px;
-    }
-    /* reduce the width of the input box*/
-    .welcome_box .welcome_box_input_group .welcome_box_input_box {
-        width: 78%;
-    }
+  /* reduce the scaling effect of the logo */
+  .welcome_logo {
+    margin: 2% auto 0 auto;
+    width: 15%;
+  }
+  /* make the box abit smaller */
+  .welcome_box {
+    margin: auto auto 80% auto;
+    width: 50%;
+    border-radius: 3px;
+  }
+  /* reduce the width of the input box*/
+  .welcome_box .welcome_box_input_group .welcome_box_input_box {
+    width: 78%;
+  }
 }
 
-@media only screen and (min-width: 600){
-    .welcome_logo {
-        margin: 5% auto 0 auto;
-        width: 22%;
-    }
+@media only screen and (min-width: 600) {
+  .welcome_logo {
+    margin: 5% auto 0 auto;
+    width: 22%;
+  }
 }
