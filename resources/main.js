@@ -164,13 +164,14 @@ function callback(response, status) {
         buildResult(
           response.originAddresses[0],
           response.destinationAddresses[j],
+          results[j].duration,
           results[j].distance);
       }
     }
   }
 }
 
-function buildResult(f,t,d){
+function buildResult(f,t,r,d){
       // get the emissions
   let e = getEm(d),
       // get the trees required
@@ -181,13 +182,15 @@ function buildResult(f,t,d){
       o = '',
       // set the time
       m = (Math.ceil((s*10000))/10000);
-      // set the distance to the text version
-      d = d.text;
+  // set the duration to the text version
+  r = r.text,
+  // set the distance to the text version
+  d = d.text;
   // loop through while i is less than the number of trees required,
     // add a tree to the output
   for (let i = 0; i < s; i++) o += x;
       // build array with the strings
-  let it = [f, t, d, e, o, m],
+  let it = [f, t, d, r, e, o, m],
       // and with the elements to set
       el = document.getElementsByClassName('bold');
   // loop through the array of elements setting it to our strings
