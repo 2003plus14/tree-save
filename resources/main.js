@@ -181,7 +181,7 @@ function buildResult(f, t, r, d) {
     // set the output string
     o = '',
     // set the time
-    m = (Math.ceil((s * 10000)) / 10000);
+    m = (Math.ceil((s*10000))/10000);
   // set the duration to the text version
   r = r.text,
     // set the distance to the text version
@@ -190,9 +190,9 @@ function buildResult(f, t, r, d) {
   // add a tree to the output
   for (let i = 0; i < s; i++) o += x;
   // build array with the strings
-  let it = [f, t, d, r, e, s, m],
+  let it = [f, t, d, r, e + ' tonnes of CO2', s + ' trees'],
     // and with the elements to set
-    el = document.getElementsByClassName('bold');
+    el = document.getElementsByClassName('obj');
   // loop through the array of elements setting it to our strings
   for (let i = 0; i < el.length; i++) el[i].innerHTML = it[i];
   // show the results page

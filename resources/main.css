@@ -94,7 +94,7 @@ html, body {
 /* sizing the welcome page logo (mobile) */
 
 .welcome_logo {
-  width: 60%;
+  width: 50%;
   margin: 1em auto 0 auto;
   border-radius: 50%;
   box-shadow: black 0 0 4px;
@@ -120,6 +120,7 @@ html, body {
   font-size: 30px;
   text-align: center;
   padding: 0.5em 0 0 0;
+  margin-top: 12px;
 }
 
 
@@ -306,9 +307,13 @@ html, body {
 .welcome_results_pane .big {
   color: white;
   display: inline;
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 125%;
 }
 
 .welcome_results_pane .bold {
+  display: block;
   font-style: oblique;
   font-weight: bold;
   font-size: 125%;
@@ -389,16 +394,5 @@ html, body {
     margin: auto auto 80% auto;
     width: 50%;
     border-radius: 3px;
-  }
-  /* reduce the width of the input box*/
-  .welcome_box .welcome_box_input_group .welcome_box_input_box {
-    width: 78%;
-  }
-}
-
-@media only screen and (min-width: 600) {
-  .welcome_logo {
-    margin: 5% auto 0 auto;
-    width: 22%;
   }
 }
