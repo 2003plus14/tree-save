@@ -2,18 +2,18 @@
 <html lang='en'>
 
 <head>
-    <!-- title of the webapp -->
-    <title>~ treesave ~</title>
-    <!-- page information -->
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <!-- import the font awesome (icon) pack -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <!-- hello -->
-    <!-- import our css file -->
-    <link rel='stylesheet' type='text/css' href='resources/main.css'>
-    <!-- import our js file -->
-    <script type='text/javascript' src='resources/main.js'></script>
+  <!-- title of the webapp -->
+  <title>~ treesave ~</title>
+  <!-- page information -->
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <!-- import the font awesome (icon) pack -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <!-- hello -->
+  <!-- import our css file -->
+  <link rel='stylesheet' type='text/css' href='resources/main.css'>
+  <!-- import our js file -->
+  <script type='text/javascript' src='resources/main.js'></script>
 </head>
 
 <body onload='welcome_load()' class='main welcome_background'>
@@ -23,68 +23,67 @@
       <i class='fa fa-bars fa-2x' aria-hidden='true'></i>
   </button>
   <div id='results_bar' class='results_sidebar'>
-      <!-- button to close the side bar -->
-      <button class='results_close_button button button_clean' onclick='toggleSidebar("c")'>
+    <!-- button to close the side bar -->
+    <button class='results_close_button button button_clean' onclick='toggleSidebar("c")'>
           <i class='fa fa-times fa-2x' aria-hidden='true'></i>
       </button>
-      <h2 class='welcome_header_text'>tree save</h2>
-      <!-- horizontal line -->
-      <hr>
-      <!-- the about box -->
-      <p class='welcome_header_blurb'>
-          the world is not a place for people,</br>
-          but people are a place of this world.
-      </p>
+    <h2 class='welcome_header_text'>tree save</h2>
+    <!-- horizontal line -->
+    <hr>
+    <!-- the about box -->
+    <p class='welcome_header_blurb'>
+      the world is not a place for people,</br>
+      but people are a place of this world.
+    </p>
   </div>
-    <a href='about.html'><img class='welcome_logo' src='resources/img/logo.png' /></a>
-    <div class='welcome_box' id='welcome_box'>
-        <h2 class='welcome_header_text'>tree save</h2>
-        <p class='welcome_header_blurb'>
-            welcome to the tree save webapp<br>please input a start and destination in the boxes below or use the map icon choose from a map.
-        </p>
-        <form class='welcome_inputs_container' >
-            <div class='welcome_box_input_group'>
-                <button title='click to choose location from map' type="button" class='button button_clean welcome_button' onclick='welcome_show_map("start")'>
+  <a href='about.html'><img class='welcome_logo' src='resources/img/logo.png' /></a>
+  <div class='welcome_box'>
+    <button class='button button_clean close_pane' onclick='show("main")'>
+      <i class='fa fa-times fa-2x' aria-hidden='true'></i>
+    </button>
+    <h2 class='welcome_header_text'>tree save</h2>
+    <div id='welcome_box'>
+      <p class='welcome_header_blurb'>
+        welcome to the tree save webapp<br>please input a start and destination in the boxes below or use the map icon choose from a map.
+      </p>
+      <form class='welcome_inputs_container'>
+        <div class='welcome_box_input_group'>
+          <button title='click to choose location from map' type="button" class='button button_clean welcome_button' onclick='welcome_show_map("start")'>
                     <i class='fa fa-map fa-2x' aria-hidden='true'></i>
                 </button>
-                <input class='welcome_box_input_box' placeholder='' type='text' autofocus  autocomplete="On" required>
-                <span class='welcome_box_input_bar'></span>
-                <label class='welcome_box_input_label'>start</label>
-            </div>
-            <div class='welcome_box_input_group'>
-                <button title='click to choose location from map' type="button" class='button button_clean welcome_button' onclick='welcome_show_map("destination")'>
+          <input class='welcome_box_input_box' placeholder='' type='text' autofocus autocomplete="On" required>
+          <span class='welcome_box_input_bar'></span>
+          <label class='welcome_box_input_label'>start</label>
+        </div>
+        <div class='welcome_box_input_group'>
+          <button title='click to choose location from map' type="button" class='button button_clean welcome_button' onclick='welcome_show_map("destination")'>
                     <i class='fa fa-map fa-2x' aria-hidden='true'></i>
                 </button>
-                <input class='welcome_box_input_box' placeholder='' type='text' autocomplete="On" required>
-                <span class='welcome_box_input_bar'></span>
-                <label class='welcome_box_input_label'>destination</label>
-            </div>
-            <button type="button" class='button button_circle' onclick='welcome_inputs_selected()' >
+          <input class='welcome_box_input_box' placeholder='' type='text' autocomplete="On" required>
+          <span class='welcome_box_input_bar'></span>
+          <label class='welcome_box_input_label'>destination</label>
+        </div>
+        <button type="button" class='button button_circle' onclick='welcome_inputs_selected()'>
               <i class='fa fa-angle-right fa-2x' aria-hidden='true'></i>
             </button>
-        </form>
-    </div>
-    <!-- container for our google map -->
-    <div class='welcome_google_map' id='google_map'>
-        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places'></script>
+      </form>
     </div>
     <!-- container for the results pane -->
-    <div class='welcome_box welcome_results_pane' id='welcome_results_pane'>
-      <button class='close_pane button button_clean' onclick='show("main")'>
-          <i class='fa fa-times fa-2x' aria-hidden='true'></i>
-      </button>
-      <div class='tb'>
-        <h6 class='text'>from </h6><h3 class='bold big'>Aberdeen, UK</h3>
-        <h6 class='text'> to </h6><h3 class='bold big'>London, UK</h3><br><br>
-        <p class='text'>
-          a distance of <span class='bold'>878 km</span>
-          will take approximately <span class='bold'>1h</span><br>
-          and will produce <span class='bold'>0.08</span>
-          metric tonnes of CO2 emissions<br>it will take<span class='bold'></span>
-          trees to clear this in the time it takes for you to travel this journey
-        </p>
-      </div>
+    <div class='welcome_results_pane' id='welcome_results_pane'>
+      <h6 class='text'>from </h6>
+      <h3 class='bold big'>Aberdeen, UK</h3>
+      <h6 class='text'> to </h6>
+      <h3 class='bold big'>London, UK</h3><br><br>
+      <p class='text'>
+        a distance of <span class='bold'>878 km</span> would take approximately <span class='bold'>1h</span><br> and will produce <span class='bold'>0.08</span> metric tonnes of CO2 emissions<br>it would take
+        <span class='bold'></span> trees to clear this in the time it takes for you to travel this journey
+      </p>
     </div>
+  </div>
+  <!-- container for our google map -->
+  <div class='welcome_google_map' id='google_map'>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places'></script>
+  </div>
 </body>
 
 </html>

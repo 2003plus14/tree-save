@@ -24,7 +24,9 @@ function welcome_build_map() {
     // instantiate a directions service
     directionsService = new google.maps.DirectionsService,
     // set the renderer for the directions
-    directionsDisplay = new google.maps.DirectionsRenderer({map: map}),
+    directionsDisplay = new google.maps.DirectionsRenderer({
+      map: map
+    }),
     // make the google map
     map = new google.maps.Map(
       document.getElementById("google_map"), map_options);
@@ -133,13 +135,11 @@ function welcome_inputs_selected() {
   new google.maps.DistanceMatrixService().getDistanceMatrix({
     origins: [{
       'placeId': welcome_locations_array[0] instanceof Object ?
-        welcome_locations_array[0].getPlace().place_id :
-        welcome_locations_array[0]
+        welcome_locations_array[0].getPlace().place_id : welcome_locations_array[0]
     }],
     destinations: [{
       'placeId': welcome_locations_array[1] instanceof Object ?
-        welcome_locations_array[1].getPlace().place_id :
-        welcome_locations_array[1]
+        welcome_locations_array[1].getPlace().place_id : welcome_locations_array[1]
     }],
     travelMode: 'DRIVING'
   }, callback);
@@ -171,28 +171,28 @@ function callback(response, status) {
   }
 }
 
-function buildResult(f,t,r,d){
-      // get the emissions
+function buildResult(f, t, r, d) {
+  // get the emissions
   let e = getEm(d),
-      // get the trees required
-      s = treeSave(e,r),
-      // set the html to add trees
-      x = '<img class="tree" src="resources/img/tree.png"/>',
-      // set the output string
-      o = '',
-      // set the time
-      m = (Math.ceil((s*10000))/10000);
+    // get the trees required
+    s = treeSave(e, r),
+    // set the html to add trees
+    x = '<img class="tree" src="resources/img/tree.png"/>',
+    // set the output string
+    o = '',
+    // set the time
+    m = (Math.ceil((s * 10000)) / 10000);
   // set the duration to the text version
   r = r.text,
-  // set the distance to the text version
-  d = d.text;
+    // set the distance to the text version
+    d = d.text;
   // loop through while i is less than the number of trees required,
-    // add a tree to the output
+  // add a tree to the output
   for (let i = 0; i < s; i++) o += x;
-      // build array with the strings
+  // build array with the strings
   let it = [f, t, d, r, e, s, m],
-      // and with the elements to set
-      el = document.getElementsByClassName('bold');
+    // and with the elements to set
+    el = document.getElementsByClassName('bold');
   // loop through the array of elements setting it to our strings
   for (let i = 0; i < el.length; i++) el[i].innerHTML = it[i];
   // show the results page
@@ -200,18 +200,18 @@ function buildResult(f,t,r,d){
 }
 
 // function to return the emissions based on the distance
-function getEm(d){
+function getEm(d) {
   // as a temporary measure just using data from the epa to return
   //  an estimated value
   // rounded((distance(m)/1000)*(co2 per uk gallon/average mpg) * 100) / 100
-  return Math.round((((d.value/1000)*(0.0155/60))+0.00001)*100)/100;
+  return Math.round((((d.value / 1000) * (0.0155 / 60)) + 0.00001) * 100) / 100;
 }
 
 // function to return the trees saved based on the emissions
-function treeSave(e,r){
+function treeSave(e, r) {
   // as a temporary measure just using data from the epa to return
   //  an estimated value
-  return Math.ceil(e/((0.003859/365/24/60)*r.value));
+  return Math.ceil(e / ((0.003859 / 365 / 24 / 60) * r.value));
 }
 
 // function to toggle the sidebar
@@ -220,12 +220,13 @@ function toggleSidebar(x) {
     x == 'o' ? '250px' : '0';
 }
 
-function show(s){
-  let b = 'none', m = '-2', r = 'none';
+function show(s) {
+  let b = 'none',
+    m = '-2',
+    r = 'none';
   if (s == 'map') m = '2';
   else if (s == 'main') b = 'block';
-  else if ( s == 'results') r = 'block';
-  console.log(b + ' ' + m + ' ' + r);
+  else if (s == 'results') r = 'block';
   document.getElementById("welcome_results_pane").style.display = r;
   document.getElementById("welcome_box").style.display = b;
   document.getElementById("google_map").style.zIndex = m;

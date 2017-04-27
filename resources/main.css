@@ -228,19 +228,12 @@ html, body {
 
 /* results pane styling */
 .welcome_results_pane {
-    width: 95vw;
-    height: 95vh;
     display: none;
+    padding-bottom: 2em;
 }
 
-.welcome_results_pane .close_pane{
+.close_pane{
   float: right;
-  right: 0.5em;
-  top: 0.5em;
-}
-
-.welcome_results_pane .tb {
-  padding: 2em 0 0 0;
 }
 
 .welcome_results_pane .tree {
@@ -249,13 +242,11 @@ html, body {
 }
 
 .welcome_results_pane .text {
-  margin: inherit 2em;
   display: inline;
   color: #D8DEE9;
 }
 
 .welcome_results_pane .big {
-  margin: 4em 0 2em 0;
   color: white;
   display: inline;
 }
@@ -327,12 +318,6 @@ html, body {
     /* reduce the width of the input box*/
     .welcome_box .welcome_box_input_group .welcome_box_input_box {
         width: 78%;
-    }
-    .welcome_results_pane {
-      width: 60vw;
-      height: 55vh;
-      top: 35vh;
-      left: 20vw;
     }
 }
 
