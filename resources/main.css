@@ -48,6 +48,7 @@ html, body {
 .button_clean {
     background: transparent;
     color: #FAFAFA;
+    float: right;
 }
 
 /* ********** welcome page ********** */
@@ -132,6 +133,7 @@ html, body {
 
 /* style the input element*/
 .welcome_box .welcome_box_input_group .welcome_box_input_box {
+  width: 70%;
     background: transparent;
     font-size: 16px;
     padding: 10px 0 10px 5px;
@@ -173,7 +175,7 @@ html, body {
 .welcome_box .welcome_box_input_group .welcome_box_input_bar {
     position: relative;
     display: block;
-    width: 100%;
+    width: 81%;
 }
 
 /* style the bar on the bottom */
@@ -230,10 +232,6 @@ html, body {
 .welcome_results_pane {
     display: none;
     padding-bottom: 2em;
-}
-
-.close_pane{
-  float: right;
 }
 
 .welcome_results_pane .tree {
