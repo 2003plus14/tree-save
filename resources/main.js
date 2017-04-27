@@ -24,9 +24,7 @@ function welcome_build_map() {
     // instantiate a directions service
     directionsService = new google.maps.DirectionsService,
     // set the renderer for the directions
-    directionsDisplay = new google.maps.DirectionsRenderer({
-      map: map
-    }),
+    directionsDisplay = new google.maps.DirectionsRenderer({map: map}),
     // make the google map
     map = new google.maps.Map(
       document.getElementById("google_map"), map_options);
@@ -168,15 +166,18 @@ function callback(response, status) {
         document.getElementById('dist').innerHTML =
           results[j].distance.text;
         document.getElementById('em').innerHTML =
-          getEm(results[j].distance.value/1000);
+          getEm(results[j].distance);
         document.getElementById("welcome_results_pane").style.zIndex = '100';
       }
     }
   }
 }
 
+// function to return the emissions based on the distance
 function getEm(d){
-  return d*0.00012;
+  // as a temporary measure just using data from the epa to return
+  //  an estimated value
+  return d.value/1000*0.00012;
 }
 
 // function to toggle the sidebar
