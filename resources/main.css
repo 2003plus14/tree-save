@@ -173,7 +173,7 @@ html, body {
 .welcome_box .welcome_box_input_group .welcome_box_input_bar {
     position: relative;
     display: block;
-    width: 81%;
+    width: 100%;
 }
 
 /* style the bar on the bottom */
