@@ -50,11 +50,6 @@ html, body {
     color: #FAFAFA;
 }
 
-/* set the default results page background */
-.results_background {
-    background: url('img/backgroundGood.png') no-repeat left top;
-}
-
 /* ********** welcome page ********** */
 /* set the welcome page background*/
 .welcome_background:before {
@@ -88,6 +83,7 @@ html, body {
     margin: auto;
     background: black;
     background: rgba(0, 0, 0, 0.85);
+    box-shadow: black 0 0 10px;
 }
 
 /* style thee header text */
@@ -238,15 +234,26 @@ html, body {
     top: 2.5vh;
     left: 2.5vw;
     z-index: -2;
-    background: white;
-    box-shadow: black 0 0 10px;
 }
 
 .welcome_results_pane * {
   margin: 0.5em auto;
 }
 
-.welcome_results_pane p {
+.welcome_results_pane .tree {
+  margin: auto;
+  width: 3em;
+}
+
+.welcome_results_pane .text {
+  margin: inherit 2em;
+  display: inline;
+  color: #D8DEE9;
+}
+
+.welcome_results_pane .big {
+  margin: 4em 0 0 0;
+  color: white;
   display: inline;
 }
 
@@ -254,31 +261,6 @@ html, body {
   font-style: oblique;
   font-weight: bold;
 }
-
-/* ********** results page ********** */
-/* placement of the group of buttons*/
-.results_buttons_group {
-    margin: auto;
-    position: absolute;
-    width: 360px;
-    bottom: 0;
-    left: 50%;
-    margin-left: -180px;
-}
-
-/* sizing for the selected button */
-.results_transport_buttons_big {
-    background: #BDBDBD;
-    width: 80px;
-    height: 80px;
-}
-
-/* sizing for the adjacent buttons*/
-.results_transport_buttons_middle {
-    width: 70px;
-    height: 70px;
-}
-
 
 /* sidebar properties */
 /* sizingg and styling the sidebar*/
@@ -312,13 +294,6 @@ html, body {
     position: absolute;
     top: 5;
     left: 1%;
-}
-
-/* placement of the button to open the map */
-.results_map {
-    float: right;
-    top: 5%;
-    left: 8%;
 }
 
 /* temp info pane styling*/

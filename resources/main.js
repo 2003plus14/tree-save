@@ -171,14 +171,15 @@ function callback(response, status) {
 function buildResult(f,t,d){
   let e = getEm(d),
       tr = treeSave(e),
+      tree = '<img class="tree" src="resources/img/tree.png"/>',
       out = '';
-  for (let i = 0; i < tr; i++) out += 'tree ';
+  for (let i = 0; i < tr; i++) out += tree;
   document.getElementById('from').innerHTML = f;
   document.getElementById('to').innerHTML = t;
   document.getElementById('dist').innerHTML = d.text;
   document.getElementById('em').innerHTML = e;
   document.getElementById('tree').innerHTML = out;
-  document.getElementById('year').innerHTML = tr;
+  document.getElementById('year').innerHTML = (Math.ceil((tr*10000))/10000);
   document.getElementById("welcome_results_pane").style.zIndex = '100';
 }
 
@@ -186,7 +187,8 @@ function buildResult(f,t,d){
 function getEm(d){
   // as a temporary measure just using data from the epa to return
   //  an estimated value
-  return d.value/1000*(0.008887/96.5606);
+  // rounded((distance(m)/100)*(co2 per uk gallon/average mpg) * 100) / 100
+  return Math.round((((d.value/1000)*(0.0155/60)) + 0.00001) * 100) / 100;
 }
 
 // function to return the trees saved based on the emissions

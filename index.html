@@ -69,14 +69,20 @@
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places'></script>
     </div>
     <!-- container for the results pane -->
-    <div class='welcome_results_pane' id='welcome_results_pane'>
-      <h1 class='welcome_results_pane_header'>title</h1>
-      <h6 class='welcome_results_pane_start'>from</h6><h3 id='from'>x</h3>
-      <h6 class='welcome_results_pane_start'>to</h6><h3 id='to'>y</h3><br>
-      <p class='text'> you will travel <p class='bold' id='dist'>1</p>
-        this will cause <p class='bold' id='em'>1</p> metric tons of CO2e of emissions
-      <br> it will take <p class='bold' id='tree'>1</p> trees
-      <p class='bold' id='year'>1</p> to clear this</p>
+    <div class='welcome_box welcome_results_pane' id='welcome_results_pane'>
+      <h1><hr></h1>
+      <h6 class='text'>from </h6><h3 class='big' id='from'>Aberdeen, UK</h3>
+      <h6 class='text'> to </h6><h3 class='big' id='to'>London, UK</h3><br>
+      <p class='text'>
+        is a distance of
+        <span class='bold' id='dist'>878 km</span>,
+        this will cause
+        <span class='bold' id='em'>0.08083898507258655</span>
+        metric tons of CO2 emissions<br>it will take
+        <span class='bold' id='tree'><img class='tree' src="resources/img/tree.png"/></span> trees
+        <span class='bold' id='year'>0.0003119576433951115</span>
+        years to clear this
+      </p>
     </div>
 </body>
 
