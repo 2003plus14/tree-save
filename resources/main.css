@@ -230,20 +230,17 @@ html, body {
 .welcome_results_pane {
     width: 95vw;
     height: 95vh;
-    position: absolute;
-    top: 2.5vh;
-    left: 2.5vw;
-    z-index: -2;
+    display: none;
 }
 
 .welcome_results_pane .close_pane{
-  position: absolute;
-  right: 1em;
-  top: 0.1em;
+  float: right;
+  right: 0.5em;
+  top: 0.5em;
 }
 
 .welcome_results_pane .tb {
-  margin: 2em 0 0 0;
+  padding: 2em 0 0 0;
 }
 
 .welcome_results_pane .tree {

@@ -109,7 +109,7 @@ function welcome_info_button_press(btn, welcome_marker, info, loc) {
   welcome_input_boxes_array[i].value = loc.formatted_address;
   welcome_locations_array[i] = loc.place_id;
   // 'close' the map
-  document.getElementById("google_map").style.zIndex = '-2';
+  show('main');
 }
 
 // function to make the input boxes to integrate with places api
@@ -149,8 +149,8 @@ function welcome_inputs_selected() {
 function welcome_show_map(who) {
   // set our global variable to the button presseer
   welcome_which_map = who;
-  // show our map (this is a temporary way of doing this i promise)
-  document.getElementById("google_map").style.zIndex = '100';
+  // show the map
+  show('map');
 }
 
 // function to handle callback from distance api
@@ -195,8 +195,8 @@ function buildResult(f,t,r,d){
       el = document.getElementsByClassName('bold');
   // loop through the array of elements setting it to our strings
   for (let i = 0; i < el.length; i++) el[i].innerHTML = it[i];
-  // show the map
-  document.getElementById("welcome_results_pane").style.zIndex = '100';
+  // show the results page
+  show('results');
 }
 
 // function to return the emissions based on the distance
@@ -214,12 +214,19 @@ function treeSave(e,r){
   return Math.ceil(e/((0.003859/365/24/60)*r.value));
 }
 
-function hidePane(){
-  document.getElementById("welcome_results_pane").style.zIndex = '-2';
-}
-
 // function to toggle the sidebar
 function toggleSidebar(x) {
   document.getElementById("results_bar").style.width =
     x == 'o' ? '250px' : '0';
+}
+
+function show(s){
+  let b = 'none', m = '-2', r = 'none';
+  if (s == 'map') m = '2';
+  else if (s == 'main') b = 'block';
+  else if ( s == 'results') r = 'block';
+  console.log(b + ' ' + m + ' ' + r);
+  document.getElementById("welcome_results_pane").style.display = r;
+  document.getElementById("welcome_box").style.display = b;
+  document.getElementById("google_map").style.zIndex = m;
 }
