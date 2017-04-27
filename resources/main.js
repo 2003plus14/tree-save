@@ -177,6 +177,7 @@ function buildResult(f,t,r,d){
       // get the trees required
       s = treeSave(e,r),
       // set the html to add trees
+      x = '<img class="tree" src="resources/img/tree.png"/>',
       // set the output string
       o = '',
       // set the time
@@ -187,9 +188,9 @@ function buildResult(f,t,r,d){
   d = d.text;
   // loop through while i is less than the number of trees required,
     // add a tree to the output
-  // for (let i = 0; i < s; i++) o += x;
+  for (let i = 0; i < s; i++) o += x;
       // build array with the strings
-  let it = [f, t, d, r, e, m],
+  let it = [f, t, d, r, e, s, m],
       // and with the elements to set
       el = document.getElementsByClassName('bold');
   // loop through the array of elements setting it to our strings
@@ -210,7 +211,7 @@ function getEm(d){
 function treeSave(e,r){
   // as a temporary measure just using data from the epa to return
   //  an estimated value
-  return Math.ceil(e/(0.003859));
+  return Math.ceil(e/((0.003859/365/24/60)*r.value));
 }
 
 // function to toggle the sidebar

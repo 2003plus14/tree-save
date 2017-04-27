@@ -242,7 +242,7 @@ html, body {
 
 .welcome_results_pane .tree {
   margin: auto;
-  width: 3em;
+  width: 0.1em;
 }
 
 .welcome_results_pane .text {
@@ -252,7 +252,7 @@ html, body {
 }
 
 .welcome_results_pane .big {
-  margin: 4em 0 0 0;
+  margin: 4em 0 2em 0;
   color: white;
   display: inline;
 }
@@ -260,6 +260,7 @@ html, body {
 .welcome_results_pane .bold {
   font-style: oblique;
   font-weight: bold;
+  font-size: 125%;
 }
 
 /* sidebar properties */
