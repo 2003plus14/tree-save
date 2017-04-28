@@ -81,7 +81,7 @@ html, body {
   top: -1vh;
   z-index: -1;
   background: url('img/background.jpg');
-  width: 102vw;
+  width: 105vw;
   height: 102vh;
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
@@ -158,7 +158,7 @@ html, body {
 /* placement for the individual input box ( which is made of three elements ) */
 
 .welcome_box .welcome_box_input_group {
-  width: 90%;
+  width: 80%;
   margin: auto;
   position: relative;
 }
@@ -379,7 +379,7 @@ html, body {
   /* make the box abit smaller */
   .welcome_box {
     margin: auto auto 80% auto;
-    width: 60%;
+    width: 50%;
     border-radius: 3px;
   }
   .welcome_box .welcome_box_input_group .welcome_box_input_box {
