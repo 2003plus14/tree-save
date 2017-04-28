@@ -405,6 +405,10 @@ html, body {
     margin: 2% auto 0 auto;
     width: 15%;
   }
+  /* sizing for tree save header */
+  .welcome_header_text {
+    margin: 12px auto 12px 0;
+  }
   /* make the box abit smaller */
   .welcome_box {
     margin: auto auto 80% auto;
