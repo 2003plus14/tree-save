@@ -191,7 +191,7 @@ function buildResult(f, t, r, d) {
   // add a tree to the output
   for (let i = 0; i < s; i++) o += x;
   // build array with the strings
-  let it = [f, t, d, r, e + ' tonnes of CO2', s + ' trees'],
+  let it = [f + ',', t, d, r, e + ' tonnes of CO2', s + ' trees'],
     // and with the elements to set
     el = document.getElementsByClassName('obj');
   // loop through the array of elements setting it to our strings
