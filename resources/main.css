@@ -275,10 +275,6 @@ html, body {
   animation: inputHighlighter 0.3s ease;
 }
 
-.welcome_box .welcome_results_pane {
-  animation: bounceIn 2s;
-}
-
 .welcome_info_button {
   margin: 0;
   color: black;
