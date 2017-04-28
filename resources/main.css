@@ -275,6 +275,25 @@ html, body {
   animation: inputHighlighter 0.3s ease;
 }
 
+.welcome_box .welcome_results_pane {
+  animation: bounceIn 2s;
+}
+
+.welcome_info_button {
+  margin: 0;
+  color: black;
+  width: 50px;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.welcome_info_button:hover {
+  background: rgba(0, 255, 0, 0.4);
+}
+
+.welcome_info_button+.welcome_info_button:hover {
+  background: rgba(255, 0, 0, 0.4);
+}
 
 /* google maps sizing*/
 

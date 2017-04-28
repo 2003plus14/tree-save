@@ -55,6 +55,7 @@ function welcome_geocode_location(
         // set the map to our map
         map: map
       });
+      welcome_marker.setAnimation(google.maps.Animation.BOUNCE);
       // set the contents of our info window to the address
       welcome_info_window.setContent(
         // add some text and two buttons for choosing
@@ -223,6 +224,8 @@ function toggleSidebar(x) {
 function show(s) {
   document.getElementById("welcome_results_pane").style.display =
     s == 'results' ? 'block' : 'none';
+  document.getElementById("welcome_results_pane").style.visibility =
+    s == 'results' ? 'visible' : 'hidden';
   document.getElementById("closePane").style.display =
     s == 'results' ? 'block' : 'none';
   document.getElementById("welcome_box").style.display =
