@@ -224,8 +224,6 @@ function toggleSidebar(x) {
 function show(s) {
   document.getElementById("welcome_results_pane").style.display =
     s == 'results' ? 'block' : 'none';
-  document.getElementById("welcome_results_pane").style.visibility =
-    s == 'results' ? 'visible' : 'hidden';
   document.getElementById("closePane").style.display =
     s == 'results' ? 'block' : 'none';
   document.getElementById("welcome_box").style.display =
