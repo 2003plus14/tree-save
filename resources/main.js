@@ -15,7 +15,9 @@ function welcome_build_map() {
     // set the cneter latitude and longitude
     center: new google.maps.LatLng(57.149717, -2.094278),
     // set the default zoom level
-    zoom: 10
+    zoom: 10,
+    // remove the default ui
+    disableDefaultUI: true
   };
   // set up the geocoder that will turn coords into locations
   var geocoder = new google.maps.Geocoder,
@@ -242,4 +244,7 @@ function show(s) {
   // either hide or show the map dialog
   document.getElementById("google_map").style.zIndex =
     s == 'map' ? '2' : '-2';
+  // either hide or show close button for the results pane
+  document.getElementById("closeMap").style.display =
+    s == 'map' ? 'block' : 'none';
 }

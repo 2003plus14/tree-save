@@ -70,6 +70,15 @@ html, body {
 
 .closePane {
   display: none;
+  z-index: 4;
+}
+
+.closeMap {
+  display: none;
+  z-index: 4;
+  position: absolute;
+  top: 2vh;
+  right: 4vw;
 }
 
 /* ********** welcome page ********** */

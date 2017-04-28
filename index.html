@@ -79,9 +79,12 @@
     </div>
   </main>
   <!-- container for our google map -->
-  <dialog class='welcome_google_map' id='google_map'>
+    <button title='close the map' class='button button_clean closeMap' id='closeMap' onclick='show("main")'>
+      <i class='fa fa-times fa-2x' aria-hidden='true'></i>
+    </button>
+  <div class='welcome_google_map' id='google_map'>
     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDe7PzfAX5eJ4-zSueIwr_lkTdx1yAwxsI&libraries=places'></script>
-  </dialog>
+  </div>
 </body>
 
 </html>
