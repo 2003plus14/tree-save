@@ -160,10 +160,14 @@ function callback(response, status) {
   if (status == 'OK') {
     // set the part of the response into a var
     var results = response.rows[0].elements;
+    // iterate through the array of results
     for (var j = 0; j < results.length; j++) {
+      // if the result from the server is zero results
       if (results[j].status == 'ZERO_RESULTS')
+        // print an alert
         alert('Sorry we can only handle land routes at this time');
       else {
+        // else run the build results method
         buildResult(
           response.originAddresses[0],
           response.destinationAddresses[j],
@@ -219,17 +223,23 @@ function treeSave(e, r) {
 
 // function to toggle the sidebar
 function toggleSidebar(x) {
+  // set the width of the sidebar to either 0 or 250
   document.getElementById("results_bar").style.width =
     x == 'o' ? '250px' : '0';
 }
 
+// function to show one element and hide all the others
 function show(s) {
+  // either hide or show the results pane
   document.getElementById("welcome_results_pane").style.display =
     s == 'results' ? 'block' : 'none';
+  // either hide or show close button for the results pane
   document.getElementById("closePane").style.display =
     s == 'results' ? 'block' : 'none';
+  // either hide or show the main screen
   document.getElementById("welcome_box").style.display =
     s == 'main' ? 'block' : 'none';
+  // either hide or show the map dialog
   document.getElementById("google_map").style.zIndex =
     s == 'map' ? '2' : '-2';
 }
