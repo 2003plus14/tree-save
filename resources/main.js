@@ -181,11 +181,11 @@ function buildResult(f, t, r, d) {
     // set the output string
     o = '',
     // set the time
-    m = (Math.ceil((s*10000))/10000);
+    m = (Math.ceil((s * 10000)) / 10000);
   // set the duration to the text version
-  r = r.text,
-    // set the distance to the text version
-    d = d.text;
+  r = r.text;
+  // set the distance to the text version
+  d = d.text;
   // loop through while i is less than the number of trees required,
   // add a tree to the output
   for (let i = 0; i < s; i++) o += x;
@@ -221,13 +221,10 @@ function toggleSidebar(x) {
 }
 
 function show(s) {
-  let b = 'none',
-    m = '-2',
-    r = 'none';
-  if (s == 'map') m = '2';
-  else if (s == 'main') b = 'block';
-  else if (s == 'results') r = 'block';
-  document.getElementById("welcome_results_pane").style.display = r;
-  document.getElementById("welcome_box").style.display = b;
-  document.getElementById("google_map").style.zIndex = m;
+  document.getElementById("welcome_results_pane").style.display =
+    s == 'results' ? 'block' : 'none';
+  document.getElementById("welcome_box").style.display =
+    s == 'main' ? 'block' : 'none';
+  document.getElementById("google_map").style.zIndex =
+    s == 'map' ? '2' : '-2';
 }

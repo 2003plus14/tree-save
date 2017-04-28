@@ -337,12 +337,14 @@ html, body {
   transition: 0.5s;
 }
 
+
 /* sizing for the logo in the side bar*/
 
 .sidebar .logo {
   width: 80%;
   margin: 0 0 2em 0;
 }
+
 
 /* placement of the button to open the sidebar*/
 
