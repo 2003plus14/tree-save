@@ -223,6 +223,8 @@ function toggleSidebar(x) {
 function show(s) {
   document.getElementById("welcome_results_pane").style.display =
     s == 'results' ? 'block' : 'none';
+  document.getElementById("closePane").style.display =
+    s == 'results' ? 'block' : 'none';
   document.getElementById("welcome_box").style.display =
     s == 'main' ? 'block' : 'none';
   document.getElementById("google_map").style.zIndex =

@@ -68,6 +68,9 @@ html, body {
   float: right;
 }
 
+.closePane {
+  display: none;
+}
 
 /* ********** welcome page ********** */
 

@@ -19,7 +19,7 @@
 <body onload='welcome_load()' class='main welcome_background'>
   <!-- side bar -->
   <!-- button to open our sidebar-->
-  <button class='results_sidebar_open button button_clean' onclick='toggleSidebar("o")'>
+  <button class='results_sidebar_open button button_clean'  onclick='toggleSidebar("o")'>
       <i class='fa fa-bars fa-2x' aria-hidden='true'></i>
   </button>
   <div id='results_bar' class='results_sidebar'>
@@ -38,7 +38,7 @@
   </div>
   <img class='welcome_logo' src='resources/img/logo.png' />
   <div class='welcome_box'>
-    <button class='button button_clean' onclick='show("main")'>
+    <button class='button button_clean closePane' id='closePane' onclick='show("main")'>
       <i class='fa fa-times fa-2x' aria-hidden='true'></i>
     </button>
     <h2 class='welcome_header_text'>tree save</h2>
@@ -75,7 +75,7 @@
       <h6 class='text'> to </h6>
       <h3 class='obj big'></h3><br><br>
       <p class='text'>
-        distance <span class='obj bold'></span> duration: <span class='obj bold'></span><br> producing: <span class='obj bold'></span><br>it would take
+        distance:<span class='obj bold'></span>duration:<span class='obj bold'></span><br>producing:<span class='obj bold'></span><br>it would take
         <span class='obj bold'></span>to clear this in the time
       </p>
     </div>
