@@ -120,7 +120,7 @@ html, body {
   font-size: 30px;
   text-align: center;
   padding: 0.5em 0 0 0;
-  margin-top: 12px;
+  margin: 12px auto 12px 7%;
 }
 
 
@@ -167,7 +167,7 @@ html, body {
 /* space the two input box groups */
 
 .welcome_box_input_group:first-of-type+.welcome_box_input_group {
-  margin: 1.5em auto 1em auto;
+  margin: 3em auto 1em auto;
 }
 
 
@@ -379,7 +379,13 @@ html, body {
   /* make the box abit smaller */
   .welcome_box {
     margin: auto auto 80% auto;
-    width: 50%;
+    width: 60%;
     border-radius: 3px;
+  }
+  .welcome_box .welcome_box_input_group .welcome_box_input_box {
+    width: 80%;
+  }
+  .welcome_box .welcome_box_input_group .welcome_box_input_bar {
+    width: 81%;
   }
 }
