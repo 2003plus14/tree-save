@@ -156,7 +156,9 @@ function welcome_show_map(who) {
 
 // function to handle callback from distance api
 function callback(response, status) {
+  // if the server responds with OK
   if (status == 'OK') {
+    // set the part of the response into a var
     var results = response.rows[0].elements;
     for (var j = 0; j < results.length; j++) {
       if (results[j].status == 'ZERO_RESULTS')
